@@ -8,6 +8,7 @@ The papers in this repository are verbatim mirrors, published here so engineers,
 
 | Paper | Published | Read | Canonical |
 |---|---|---|---|
+| [The Finite Chain: Bounding Multi-Agent Autonomy by Construction](the-finite-chain.md) | 2026-07-25 | 15 min | [↗](https://isimplifyme.com/whitepapers/the-finite-chain) |
 | [The Trust Ladder: Supervised Autonomy for AI Code Review](the-trust-ladder.md) | 2026-07-23 | 16 min | [↗](https://isimplifyme.com/whitepapers/the-trust-ladder) |
 | [The AEO Standard](the-aeo-standard.md) | 2026-07-10 | 14 min | [↗](https://isimplifyme.com/whitepapers/the-aeo-standard) |
 | [Keeping AI Spend Flat While Token Usage Grows: Caching and Model Routing on AWS Bedrock](ai-spend-caching-and-model-routing.md) | 2026-06-28 | 16 min | [↗](https://isimplifyme.com/whitepapers/ai-spend-caching-and-model-routing) |
