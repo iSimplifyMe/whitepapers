@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-aeo-standard](https://isimplifyme.com/whitepapers/the-aeo-standard)** — it revises there first; this mirror follows.
-> Joe Elstner, Founder, iSimplifyMe · Published 2026-07-10 · License: [CC BY-ND 4.0](LICENSE)
+> Joe Elstner, Founder, iSimplifyMe · Published 2026-07-10 · License: [CC BY 4.0](LICENSE)
 
 ## What this white paper is
 

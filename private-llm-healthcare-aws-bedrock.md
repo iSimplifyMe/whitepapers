@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock](https://isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock)** — it revises there first; this mirror follows.
-> Joe Elstner, Founder, iSimplifyMe · Published 2026-05-05 · License: [CC BY-ND 4.0](LICENSE)
+> Joe Elstner, Founder, iSimplifyMe · Published 2026-05-05 · License: [CC BY 4.0](LICENSE)
 
 # Private LLM Architecture for Mid-Market Healthcare on AWS Bedrock
 

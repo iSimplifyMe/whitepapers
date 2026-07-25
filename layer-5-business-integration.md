@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-5-business-integration](https://isimplifyme.com/whitepapers/layer-5-business-integration)** — it revises there first; this mirror follows.
-> Joe Elstner, Founder, iSimplifyMe · Published 2026-06-28 · License: [CC BY-ND 4.0](LICENSE)
+> Joe Elstner, Founder, iSimplifyMe · Published 2026-06-28 · License: [CC BY 4.0](LICENSE)
 
 # Layer 5: Multi-Tenant Business Integration
 
