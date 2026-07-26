@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-finite-chain](https://isimplifyme.com/whitepapers/the-finite-chain)** — it revises there first; this mirror follows.
-> Joe Elstner, Founder, iSimplifyMe · Published 2026-07-25 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-25 · License: [CC BY 4.0](LICENSE)
 
 # The Finite Chain: Bounding Multi-Agent Autonomy by Construction
 
@@ -186,7 +186,7 @@ The claim of this paper is narrow and, I think, defensible: the safety propertie
 
 ---
 
-**About the author.** Joe Elstner is the founder of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific. iSimplifyMe is bootstrapped, deploys production AI on AWS Bedrock, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
+**About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific. iSimplifyMe is bootstrapped, deploys production AI on AWS Bedrock, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
 
 **Contact.** ai@isimplifyme.com — corrections, or evidence against any specific claim in this paper, are welcome.
 

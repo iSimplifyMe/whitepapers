@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-blind-panel](https://isimplifyme.com/whitepapers/the-blind-panel)** — it revises there first; this mirror follows.
-> Joe Elstner, Founder, iSimplifyMe · Published 2026-07-26 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-26 · License: [CC BY 4.0](LICENSE)
 
 # The Blind Panel: Position Bias and Agreement as Preconditions for a Win Rate
 
@@ -241,4 +241,4 @@ The broader claim is not that evaluation panels are unreliable. It is that a pan
 
 Cite as:
 
-> Elstner, Joe. "*The Blind Panel: Position Bias and Agreement as Preconditions for a Win Rate*." iSimplifyMe, 2026. https://isimplifyme.com/whitepapers/the-blind-panel
+> Elstner, Joseph W. "*The Blind Panel: Position Bias and Agreement as Preconditions for a Win Rate*." iSimplifyMe, 2026. https://isimplifyme.com/whitepapers/the-blind-panel

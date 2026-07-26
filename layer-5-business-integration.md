@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-5-business-integration](https://isimplifyme.com/whitepapers/layer-5-business-integration)** — it revises there first; this mirror follows.
-> Joe Elstner, Founder, iSimplifyMe · Published 2026-06-28 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · License: [CC BY 4.0](LICENSE)
 
 # Layer 5: Multi-Tenant Business Integration
 
@@ -160,7 +160,7 @@ Productizing AI is mostly an integration problem, not a modeling one. Layer 5 is
 
 ---
 
-**About the author.** Joe Elstner is the founder of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific. iSimplifyMe is bootstrapped, deploys production AI on AWS, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
+**About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific. iSimplifyMe is bootstrapped, deploys production AI on AWS, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
 
 **Contact.** ai@isimplifyme.com — for engineering teams building a multi-tenant AI product, we offer a multi-tenant architecture review at no cost.
 
