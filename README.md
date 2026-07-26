@@ -28,7 +28,7 @@ Shorter engineering dossiers — production write-ups behind these papers — ar
 
 The papers are licensed [CC BY 4.0](LICENSE): share, redistribute, and adapt, in any medium, with attribution. The canonical, versioned editions live at [isimplifyme.com/whitepapers](https://isimplifyme.com/whitepapers) — treat them as the reference when a copy and the canon disagree. Cite as:
 
-> Elstner, Joe. "*[Paper title]*." iSimplifyMe, [year]. https://isimplifyme.com/whitepapers/[slug]
+> Elstner, Joseph W. "*[Paper title]*." iSimplifyMe, [year]. https://isimplifyme.com/whitepapers/[slug]
 
 Questions, corrections, or evidence against a specific claim: open an issue, or write to [ai@isimplifyme.com](mailto:ai@isimplifyme.com).
 

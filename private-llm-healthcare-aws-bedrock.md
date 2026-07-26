@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock](https://isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock)** — it revises there first; this mirror follows.
-> Joe Elstner, Founder, iSimplifyMe · Published 2026-05-05 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-05 · License: [CC BY 4.0](LICENSE)
 
 # Private LLM Architecture for Mid-Market Healthcare on AWS Bedrock
 
@@ -241,7 +241,7 @@ If your practice or platform is evaluating AI for regulated clinical workflows, 
 
 ---
 
-**About the author.** Joe Elstner is the founder of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific (Melbourne). iSimplifyMe is bootstrapped, activates the AWS Business Associate Addendum on healthcare deployments, and is exploring SOC 2 Type 1 attestation as the first formal compliance milestone for the firm.
+**About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific (Melbourne). iSimplifyMe is bootstrapped, activates the AWS Business Associate Addendum on healthcare deployments, and is exploring SOC 2 Type 1 attestation as the first formal compliance milestone for the firm.
 
 **Contact.** ai@isimplifyme.com — for engineering teams evaluating private LLM architecture, we offer an architecture review session at no cost.
 
