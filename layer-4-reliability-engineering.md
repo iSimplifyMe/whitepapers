@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-4-reliability-engineering](https://isimplifyme.com/whitepapers/layer-4-reliability-engineering)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-09-23 · License: [CC BY 4.0](LICENSE)
 
 # Layer 4: Reliability Engineering for Regulated AI
 
@@ -73,7 +73,7 @@ The lesson generalizes. Any pipeline that writes to more than one store needs bo
 
 > **Answer:** Investigate-only agents are the safe way to put AI into operations: they detect, diagnose, and escalate, but they never remediate. Each agent has a narrow surveillance scope, a scheduled cadence, a typed job contract, and a hard per-investigation cost ceiling. It runs on Bedrock, and its only outputs are a filed ticket and a one-line notification — it has no write access to production. A human decides what to do with what it finds. Detection is automated; remediation is not.
 
-The temptation, once an AI agent can detect a problem, is to let it fix the problem. That is the mistake. The design rule — automated detection is fine, automated remediation is not — came from an incident where an unguarded automated drip, wired straight from a trigger to an action with no human in between, sent the same follow-up dozens of times. The fix was not a better drip; it was a hard line between detection and action.
+The temptation, once an AI agent can detect a problem, is to let it fix the problem. That is the mistake. The design rule — automated detection is fine, automated remediation is not — exists because a trigger wired straight to an action, with no human in between, repeats a wrong action exactly as fast as a right one. The answer is not a better trigger; it is a hard line between detection and action.
 
 **The architecture.** A typed registry defines each agent: a slug, a schedule, a system prompt, a bounded tool set, a detection step that returns typed jobs, and an optional idempotency lock key. A single generic runner consumes jobs from a queue, opens a Bedrock stream with the agent's prompt and tools, and loops — bounded by a per-investigation tool-call cap and a hard cost ceiling measured in cents, enforced as a kill switch so a runaway investigation cannot run up a bill. Idempotency is enforced by an atomic conditional write on a lock key with a TTL, so the same anomaly cannot spawn duplicate investigations.
 

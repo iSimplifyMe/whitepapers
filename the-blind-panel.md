@@ -236,9 +236,3 @@ The broader claim is not that evaluation panels are unreliable. It is that a pan
 - [*The Trust Ladder: Supervised Autonomy for AI Code Review*](https://isimplifyme.com/whitepapers/the-trust-ladder) — how a non-deterministic gate earns authority on measured precision
 - [*The Finite Chain: Bounding Multi-Agent Autonomy by Construction*](https://isimplifyme.com/whitepapers/the-finite-chain) — the same construction-over-monitoring argument, applied to agent autonomy
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — measurement-first governance posture
-
----
-
-Cite as:
-
-> Elstner, Joseph W. "*The Blind Panel: Position Bias and Agreement as Preconditions for a Win Rate*." iSimplifyMe, 2026. https://isimplifyme.com/whitepapers/the-blind-panel
