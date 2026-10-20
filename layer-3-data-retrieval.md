@@ -391,8 +391,8 @@ This paper is part of a series of reference architectures across the five layers
 - ***Layer 3: Data + Retrieval*** *— this paper.*
 - [**Layer 4: Reliability Engineering for Regulated AI**](https://isimplifyme.com/whitepapers/layer-4-reliability-engineering) *— shipped.* Layered guardrails; atomic content integrity; investigate-only audit agents; circuit breakers; bounded retries; deterministic quality gates. (The cost-and-latency half — caching and model routing — is a companion paper.)
 - [**Layer 5: Multi-Tenant Business Integration**](https://isimplifyme.com/whitepapers/layer-5-business-integration) *— shipped.* Single-table multi-tenancy; domain-routed tenant resolution; the unified lead pipeline; permissioned client dashboards; synchronized Stripe billing; per-tenant CRM integration.
-- ***Layer 2: Investigate-Only Agents*** *— forthcoming.* The Sentinel pattern in detail; typed agent registry; SQS-driven generic runner; atomic conditional-write locks for race protection; cost ceilings at the agent level.
-- ***Layer 1: Frontier Model Selection and Routing*** *— forthcoming.* The shorter paper. Why we don't train, why we route per task, and how the architecture stays model-version-independent.
+- [**Layer 2: The Detector Sets the Precision**](https://isimplifyme.com/whitepapers/layer-2-investigate-only-agents) *— shipped.* Investigate-only agents: the Sentinel pattern in detail; typed agent registry; SQS-driven generic runner; conditional-write locks for race protection; cost ceilings at the agent level; what five months of production tickets showed about precision.
+- [**Layer 1: The Model Is a Dependency With a Retirement Date**](https://isimplifyme.com/whitepapers/layer-1-model-selection-and-routing) *— shipped.* Frontier model selection and routing: why we don't train, why we route per task, and how the architecture stays model-version-independent.
 
 A serious firm does Layers 2 through 4 deeply. The series documents what that looks like in practice.
 
