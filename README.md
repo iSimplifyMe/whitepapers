@@ -8,7 +8,7 @@ The papers in this repository are verbatim mirrors, published here so engineers,
 
 | Paper | Published | Read | Canonical |
 |---|---|---|---|
-| [The Word Is the Bottleneck: Standing Orders for an AI Chief of Staff](the-word-is-the-bottleneck.md) | 2026-11-07 | 19 min | [↗](https://isimplifyme.com/whitepapers/the-word-is-the-bottleneck) |
+| [The Word Is the Bottleneck: Standing Orders for an AI Chief of Staff](the-word-is-the-bottleneck.md) | 2026-11-07 | 21 min | [↗](https://isimplifyme.com/whitepapers/the-word-is-the-bottleneck) |
 | [Layer 2: The Detector Sets the Precision](layer-2-investigate-only-agents.md) | 2026-10-19 | 36 min | [↗](https://isimplifyme.com/whitepapers/layer-2-investigate-only-agents) |
 | [Layer 1: The Model Is a Dependency With a Retirement Date](layer-1-model-selection-and-routing.md) | 2026-10-02 | 27 min | [↗](https://isimplifyme.com/whitepapers/layer-1-model-selection-and-routing) |
 | [The Rulebook Is Not the Guardrail: Microsoft's Code of Conduct, Read From the Harness](the-rulebook-is-not-the-guardrail.md) | 2026-09-15 | 31 min | [↗](https://isimplifyme.com/whitepapers/the-rulebook-is-not-the-guardrail) |
