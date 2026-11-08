@@ -130,7 +130,7 @@ Layers 1 through 4 make the AI capable, reliable, and affordable. Layer 5 makes 
 
 ## Evidence
 
-Added 2026-11-07. The multi-tenant platform this paper describes is the one iSimplifyMe operates, and two public accounts describe it in production.
+> **Update — 2026-11-07.** The multi-tenant platform this paper describes is the one iSimplifyMe operates, and two public accounts describe it in production.
 
 - **One platform, many tenants.** The [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study documents the fleet as operated: 31 tenants, CI across 82 repositories, one content pipeline, investigate-only agents on Bedrock.
 - **A client's fleet in the client's own account.** The [regulated law-firm site fleet](https://isimplifyme.com/case-studies/regulated-law-firm-fleet) case study documents practice-area sites, intake and a guardrailed concierge running in the firm's own AWS account, review-gated and operated by iSimplifyMe.

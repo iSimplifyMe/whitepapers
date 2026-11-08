@@ -149,11 +149,11 @@ We apply this discipline across a client base that runs from mid-market to large
 
 ## Evidence
 
-Added 2026-11-07. The controls this paper describes are running, and three of them are documented with public artifacts.
+> **Update — 2026-11-07.** The controls this paper describes are running, and three of them are documented with public artifacts.
 
 - **Mechanical guardrails are public code.** [fleetcheck](https://github.com/iSimplifyMe/fleetcheck) is the lint that runs on pull requests across the fleet; [The Layers Review Cannot See](https://isimplifyme.com/whitepapers/the-layers-review-cannot-see) documents the fork-residue failures it was built to catch.
 - **Investigate-only agents have a production account.** [Layer 2: The Detector Sets the Precision](https://isimplifyme.com/whitepapers/layer-2-investigate-only-agents) and the [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study document agents that detect and diagnose across a 31-tenant fleet and are built so they cannot act.
-- **Reproducibility is measured, not assumed.** [The Same Weights, Two Machines](https://isimplifyme.com/whitepapers/the-same-weights-two-machines) reports the byte-reproducibility ceiling under full control, pre-registered, with raw runs in [determinism-harness](https://github.com/iSimplifyMe/determinism-harness).
+- **The reproducibility ceiling has a number.** [The Same Weights, Two Machines](https://isimplifyme.com/whitepapers/the-same-weights-two-machines) reports the byte-reproducibility ceiling under full control, pre-registered, with raw runs in [determinism-harness](https://github.com/iSimplifyMe/determinism-harness).
 
 ## Companion Papers
 

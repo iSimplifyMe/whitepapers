@@ -223,9 +223,9 @@ Self-hosted LLMs on EC2 work, but the operational cost is meaningful — GPU ins
 
 ## Evidence
 
-Added 2026-11-07. This paper is a reference architecture, so the checkable material is the running system it describes rather than a dataset. Three things can be verified without talking to us.
+> **Update — 2026-11-07.** This paper is a reference architecture, so the checkable material is the running system it describes rather than a dataset. Three things can be verified without talking to us.
 
-- **The model inventory is published.** [/ai-transparency](https://isimplifyme.com/ai-transparency) names every foundation model in production, the platform each runs on, and the zero-retention posture on every model that handles client data, with the exceptions stated plainly and dated.
+- **The model inventory is published.** [/ai-transparency](https://isimplifyme.com/ai-transparency) names every foundation model in production, the platform each runs on, and the zero-retention posture on every model that handles client data, with the three exceptions named.
 - **The architecture runs a clinical product.** [NexV](https://isimplifyme.com/labs/nexv), a dental practice platform, runs every model call through Bedrock or SageMaker inside the practice's AWS account: X-ray analysis, SOAP-note transcription, and an AI phone agent on Amazon Connect, as the dossier documents.
 - **The isolation claims have a measured companion.** [The Same Model, Three Doors](https://isimplifyme.com/whitepapers/the-same-model-three-doors) measured the same model through Bedrock and the first-party API under a pre-registered plan, with raw records in the public [determinism-harness](https://github.com/iSimplifyMe/determinism-harness).
 

@@ -1,0 +1,139 @@
+{
+  "the-word-is-the-bottleneck": {
+    "sha256": "9647349712dabe2d5bcc05efba92477b255bf90f677d6ae4c86713bca3babe0b",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "mirroredAt": "2026-11-08"
+  },
+  "layer-2-investigate-only-agents": {
+    "sha256": "8a7b0b596973af3572572106b8e62afd4a4befbe37596a0a710a14cbebe8aa92",
+    "datePublished": "2026-10-19",
+    "dateModified": "2026-10-19",
+    "mirroredAt": "2026-11-08"
+  },
+  "layer-1-model-selection-and-routing": {
+    "sha256": "9f0e02e9b27dd5a824a9858c43681c89e511a9427ba7e9ffd28085dbeb8effc9",
+    "datePublished": "2026-10-02",
+    "dateModified": "2026-10-03",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-rulebook-is-not-the-guardrail": {
+    "sha256": "68121e9bdedc6016d3b2d42c2011e6813ede969ff9b754398bb28b390db9b9cd",
+    "datePublished": "2026-09-15",
+    "dateModified": "2026-09-15",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-routing-table": {
+    "sha256": "636cd0a434a8a246979c8da75c8eaa9404078b8b95c9abc4d7c64109de916193",
+    "datePublished": "2026-08-31",
+    "dateModified": "2026-08-31",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-same-model-five-doors": {
+    "sha256": "ea6869ba1e9324cde788c930d7e88a945bf9c655a643b58e41cea6f0ea23945b",
+    "datePublished": "2026-08-23",
+    "dateModified": "2026-08-23",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-tokenizer-is-a-fingerprint": {
+    "sha256": "9ab7cd7f8e7c874b6eaa9c2f00c4eb60ff95c324c168026ec93d9935b9602b18",
+    "datePublished": "2026-08-22",
+    "dateModified": "2026-08-31",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-ceiling-is-not-the-model": {
+    "sha256": "502a679c352ba7aa927bde76fbc7ee4e49ee7e680de5dcb1aaaa3b9f46b6909e",
+    "datePublished": "2026-08-11",
+    "dateModified": "2026-08-11",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-layers-review-cannot-see": {
+    "sha256": "5a936f5edd420c8d0231209ec33a55bd93f67f0d722c414fd7a46072b5741b0b",
+    "datePublished": "2026-08-05",
+    "dateModified": "2026-08-05",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-same-state-the-same-bytes": {
+    "sha256": "7128196ab30af3b2f0aa00769335c1d1b8a1b1bc344e655dd844cef184ca831d",
+    "datePublished": "2026-07-31",
+    "dateModified": "2026-07-31",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-same-object-different-bytes": {
+    "sha256": "8955fd0f835569dc399accdf14cd8359d6910294bc6cf08792b15750c96a7dab",
+    "datePublished": "2026-07-30",
+    "dateModified": "2026-07-30",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-same-weights-two-machines": {
+    "sha256": "b39de999225128f431ce6363761000cefe54443d2ddf9589b0072dc2876e495f",
+    "datePublished": "2026-07-30",
+    "dateModified": "2026-07-30",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-same-model-three-doors": {
+    "sha256": "276c2c2e1c8214b1d49d8248cb8667f85d1a4f115a7c5fabb69d3fab59c369d2",
+    "datePublished": "2026-07-29",
+    "dateModified": "2026-07-29",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-same-request-twice": {
+    "sha256": "f70109a16df7db759fe8a049326dbb9defab986fb511cbd74cd4e57bed054ecd",
+    "datePublished": "2026-07-28",
+    "dateModified": "2026-07-28",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-blind-panel": {
+    "sha256": "7b9a7545f1391e63a72e9402bb3dcf827c82149196e89faffe8c9af211c4b420",
+    "datePublished": "2026-07-26",
+    "dateModified": "2026-07-26",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-finite-chain": {
+    "sha256": "6ecd5f803998ade7a8d32495eb945d2f39a5fd86e578812fb333da44b7bdb883",
+    "datePublished": "2026-07-25",
+    "dateModified": "2026-11-07",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-trust-ladder": {
+    "sha256": "82c804ba6707256536874a571636967c7bb027ba794593d8917835ab1c087ef1",
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-09-15",
+    "mirroredAt": "2026-11-08"
+  },
+  "the-aeo-standard": {
+    "sha256": "38fc9bc99b68bc63aa84752f336e07e1c18cb910b599b42589d279cdea7af0b6",
+    "datePublished": "2026-07-10",
+    "mirroredAt": "2026-11-08"
+  },
+  "ai-spend-caching-and-model-routing": {
+    "sha256": "5390d0379ac5d06c89ebb516b7cdef9eb8e94ebe6a1e34de867f86b505a3b486",
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-11-07",
+    "mirroredAt": "2026-11-08"
+  },
+  "private-llm-healthcare-aws-bedrock": {
+    "sha256": "186676f222a0284bc015e2f5b2c749f5721a93158bac191bc30ff4ad0fb6bd0a",
+    "datePublished": "2026-05-05",
+    "dateModified": "2026-11-07",
+    "mirroredAt": "2026-11-08"
+  },
+  "layer-3-data-retrieval": {
+    "sha256": "a671712a9e5cfdf7a9a35432bb36ccd94f7d8bf4b0136e6a07762130d65848a4",
+    "datePublished": "2026-05-06",
+    "dateModified": "2026-11-07",
+    "mirroredAt": "2026-11-08"
+  },
+  "layer-4-reliability-engineering": {
+    "sha256": "2d45ab3ba8fce1f7e8fc7ab15315a39b274657ceea569c37228940bc517128b9",
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-11-07",
+    "mirroredAt": "2026-11-08"
+  },
+  "layer-5-business-integration": {
+    "sha256": "71a3e7cee11e0b3c472154a47d2045a336ef13bdfcc5dc5dd2ded7e34ad2376a",
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-11-07",
+    "mirroredAt": "2026-11-08"
+  }
+}
