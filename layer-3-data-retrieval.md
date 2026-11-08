@@ -259,7 +259,7 @@ The "vectors + top-k" pattern that ships in tutorials breaks under production lo
 
 **Query rewriting.** Raw user intent is rarely a good retrieval query. *"What does our policy say about expense reports for international travel"* rewrites into multiple structured queries: `["expense policy international travel", "travel expense reimbursement", "T&E policy"]`. A small fast Bedrock call (Haiku-class) does the rewrite; the cost is recovered many times over in retrieval quality.
 
-**Reranking.** The top-N candidates from hybrid search are not necessarily the top-K best for the prompt. A second-pass reranker (Cohere Rerank, or a Bedrock-hosted cross-encoder) re-scores the candidate pool against the original query using full-text comparison. The shape of the lift on regulated-content corpora: precision@5 jumps 10 to 25 percentage points when reranking is added on top of hybrid search.
+**Reranking.** The top-N candidates from hybrid search are not necessarily the top-K best for the prompt. A second-pass reranker (Cohere Rerank, or a Bedrock-hosted cross-encoder) re-scores the candidate pool against the original query using full-text comparison. On regulated-content corpora the lift shows up in precision at five; measure it on your own corpus before and after the reranker, because the size of the gain is corpus-specific.
 
 **Latency and cost budgets.** Each of the above adds latency. Targets the architecture is engineered for: p95 retrieval latency under 600ms end-to-end; per-query cost under $0.005 at the retrieval layer (model cost is separate). These budgets are non-negotiable for chat UX; a slow retrieval feels like a dead system.
 

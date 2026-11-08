@@ -113,13 +113,13 @@
     "mirroredAt": "2026-11-08"
   },
   "private-llm-healthcare-aws-bedrock": {
-    "sha256": "186676f222a0284bc015e2f5b2c749f5721a93158bac191bc30ff4ad0fb6bd0a",
+    "sha256": "8c5c650633bebcce23d5361d7e26f54274f14c641827fc95cc8d071ae98cbd55",
     "datePublished": "2026-05-05",
     "dateModified": "2026-11-07",
     "mirroredAt": "2026-11-08"
   },
   "layer-3-data-retrieval": {
-    "sha256": "a671712a9e5cfdf7a9a35432bb36ccd94f7d8bf4b0136e6a07762130d65848a4",
+    "sha256": "d7c4686c4fe4e2a7cada1e95b85709322d623d4a35bd61540b3d29d247af61ad",
     "datePublished": "2026-05-06",
     "dateModified": "2026-11-07",
     "mirroredAt": "2026-11-08"
