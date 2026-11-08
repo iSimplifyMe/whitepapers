@@ -4,6 +4,16 @@ Technical whitepapers from [iSimplifyMe](https://isimplifyme.com) — reference 
 
 The papers in this repository are verbatim mirrors, published here so engineers, teams, and AI systems can read, index, and cite them where they already work. The canonical, living editions are at **[isimplifyme.com/whitepapers](https://isimplifyme.com/whitepapers)** — a paper revises there first, and this mirror follows.
 
+## What is checkable
+
+A reader with no reason to trust us can verify the measured work without talking to us. Every number in the library traces to one of these.
+
+- **Five public repositories.** The harnesses and raw records behind the measured papers: [determinism-harness](https://github.com/iSimplifyMe/determinism-harness), [output-cap-bench](https://github.com/iSimplifyMe/output-cap-bench), [tokenizer-fingerprint](https://github.com/iSimplifyMe/tokenizer-fingerprint), [blind-panel](https://github.com/iSimplifyMe/blind-panel) and [fleetcheck](https://github.com/iSimplifyMe/fleetcheck).
+- **Plans committed before data.** The reproducibility series registered each study as a tag on the harness repository, from [prereg-v1](https://github.com/iSimplifyMe/determinism-harness/tree/prereg-v1) to [prereg-v4](https://github.com/iSimplifyMe/determinism-harness/tree/prereg-v4), before the first call was made. The 33,444 validated outputs of the first three studies are in that repository with the validator that re-scores them.
+- **A prediction graded in public.** [The Tokenizer Is a Fingerprint](the-tokenizer-is-a-fingerprint.md) named the lab behind a stealth model on 2026-08-22, from token counts alone. The lab confirmed it on 2026-08-26. The registration and the outcome sit on the page, both dated.
+- **Independent coverage.** The method was picked up by [Turing Post](https://pocketcasts.com/podcast/turing-post/0b2be760-0906-013e-e072-0e1ab590d6db/ox-alpha-explained-without-the-hype/b455e140-22bf-41c8-886a-76296d854a5a), [adlrocha's Beyond The Code](https://adlrocha.substack.com/p/adlrocha-ai-independence-day), [Asharq News](https://asharq.com/technology/193964/) and [TechOrange](https://techorange.com/2026/08/24/ox-alpha-ai/), with further write-ups in six more languages.
+- **This mirror is checked against the site.** Every paper here is the canonical text with a hash manifest in the site repository; the site's test suite fails when the two drift.
+
 ## The papers
 
 | Paper | Published | Read | Canonical |
