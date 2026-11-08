@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-same-model-five-doors](https://isimplifyme.com/whitepapers/the-same-model-five-doors)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-08-23 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-08-23 · DOI [10.5281/zenodo.24047875](https://doi.org/10.5281/zenodo.24047875) · License: [CC BY 4.0](LICENSE)
 
 # The Same Model, Five Doors: OpenAI's Flagship Through Two Vendors' Serving Stacks
 

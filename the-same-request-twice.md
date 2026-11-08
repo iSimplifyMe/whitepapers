@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-same-request-twice](https://isimplifyme.com/whitepapers/the-same-request-twice)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-28 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-28 · DOI [10.5281/zenodo.24047863](https://doi.org/10.5281/zenodo.24047863) · License: [CC BY 4.0](LICENSE)
 
 # The Same Request Twice: Inference Reproducibility on Models With No Sampling Controls
 

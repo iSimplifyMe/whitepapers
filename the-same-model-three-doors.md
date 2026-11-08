@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-same-model-three-doors](https://isimplifyme.com/whitepapers/the-same-model-three-doors)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-29 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-29 · DOI [10.5281/zenodo.24047865](https://doi.org/10.5281/zenodo.24047865) · License: [CC BY 4.0](LICENSE)
 
 # The Same Model, Three Doors: Attributing Inference Reproducibility to the Serving Path
 

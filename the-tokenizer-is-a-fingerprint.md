@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-tokenizer-is-a-fingerprint](https://isimplifyme.com/whitepapers/the-tokenizer-is-a-fingerprint)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-08-22 · Revised 2026-08-31 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-08-22 · Revised 2026-08-31 · DOI [10.5281/zenodo.24047881](https://doi.org/10.5281/zenodo.24047881) · License: [CC BY 4.0](LICENSE)
 
 # The Tokenizer Is a Fingerprint: Identifying the Lab Behind a Stealth Model from Token Counts Alone
 
