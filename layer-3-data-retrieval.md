@@ -245,7 +245,7 @@ This filtering happens *at retrieval*, not at presentation. The model never rece
 
 ## 7. Real Retrieval Systems
 
-> **Answer:** Real retrieval looks like a search engine, not an embedding store. Hybrid search runs semantic embeddings (Bedrock Titan or Cohere via Bedrock) and keyword BM25 (OpenSearch) in parallel, then fuses the candidate sets via reciprocal rank fusion. Metadata pre-filtering applies hard constraints (jurisdiction, date, version, recency, access tier) before similarity search. Query rewriting turns user intent into multiple structured retrieval queries via a small fast Bedrock call. Reranking re-scores top-N candidates against the original query using a second-pass model (Cohere Rerank or a Bedrock-hosted cross-encoder). On regulated-content corpora, reranking lifts precision@5 by 10 to 25 percentage points over hybrid search alone.
+> **Answer:** Real retrieval looks like a search engine, not an embedding store. Hybrid search runs semantic embeddings (Bedrock Titan or Cohere via Bedrock) and keyword BM25 (OpenSearch) in parallel, then fuses the candidate sets via reciprocal rank fusion. Metadata pre-filtering applies hard constraints (jurisdiction, date, version, recency, access tier) before similarity search. Query rewriting turns user intent into multiple structured retrieval queries via a small fast Bedrock call. Reranking re-scores top-N candidates against the original query using a second-pass model (Cohere Rerank or a Bedrock-hosted cross-encoder). On regulated-content corpora the gain shows up in precision@5; its size is corpus-specific, so measure it before and after the reranker.
 
 The "vectors + top-k" pattern that ships in tutorials breaks under production load. The real-retrieval pattern looks more like a search engine than an embedding store.
 
@@ -259,7 +259,7 @@ The "vectors + top-k" pattern that ships in tutorials breaks under production lo
 
 **Query rewriting.** Raw user intent is rarely a good retrieval query. *"What does our policy say about expense reports for international travel"* rewrites into multiple structured queries: `["expense policy international travel", "travel expense reimbursement", "T&E policy"]`. A small fast Bedrock call (Haiku-class) does the rewrite; the cost is recovered many times over in retrieval quality.
 
-**Reranking.** The top-N candidates from hybrid search are not necessarily the top-K best for the prompt. A second-pass reranker (Cohere Rerank, or a Bedrock-hosted cross-encoder) re-scores the candidate pool against the original query using full-text comparison. The shape of the lift on regulated-content corpora: precision@5 jumps 10 to 25 percentage points when reranking is added on top of hybrid search.
+**Reranking.** The top-N candidates from hybrid search are not necessarily the top-K best for the prompt. A second-pass reranker (Cohere Rerank, or a Bedrock-hosted cross-encoder) re-scores the candidate pool against the original query using full-text comparison. On regulated-content corpora the lift shows up in precision@5; measure it on your own corpus before and after the reranker, because the size of the gain is corpus-specific.
 
 **Latency and cost budgets.** Each of the above adds latency. Targets the architecture is engineered for: p95 retrieval latency under 600ms end-to-end; per-query cost under $0.005 at the retrieval layer (model cost is separate). These budgets are non-negotiable for chat UX; a slow retrieval feels like a dead system.
 
