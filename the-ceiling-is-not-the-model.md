@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-ceiling-is-not-the-model](https://isimplifyme.com/whitepapers/the-ceiling-is-not-the-model)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-08-11 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-08-11 · DOI [10.5281/zenodo.24047877](https://doi.org/10.5281/zenodo.24047877) · License: [CC BY 4.0](LICENSE)
 
 # The Ceiling Is Not the Model: How Harness Configuration Fabricates Local LLM Benchmark Results
 

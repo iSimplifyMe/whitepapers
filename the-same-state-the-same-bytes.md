@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-same-state-the-same-bytes](https://isimplifyme.com/whitepapers/the-same-state-the-same-bytes)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-31 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-31 · DOI [10.5281/zenodo.24047873](https://doi.org/10.5281/zenodo.24047873) · License: [CC BY 4.0](LICENSE)
 
 # The Same State, The Same Bytes: State Mixture Masquerading as Nondeterminism Under Full Control
 

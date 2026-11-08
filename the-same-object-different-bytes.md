@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-same-object-different-bytes](https://isimplifyme.com/whitepapers/the-same-object-different-bytes)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-30 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-30 · DOI [10.5281/zenodo.24047871](https://doi.org/10.5281/zenodo.24047871) · License: [CC BY 4.0](LICENSE)
 
 # The Same Object, Different Bytes: What a Deterministic Validator Catches — and What It Cannot See
 
