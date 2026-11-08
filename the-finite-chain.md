@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-finite-chain](https://isimplifyme.com/whitepapers/the-finite-chain)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-25 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-25 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
 
 # The Finite Chain: Bounding Multi-Agent Autonomy by Construction
 
@@ -191,3 +191,11 @@ The claim of this paper is narrow and, I think, defensible: the safety propertie
 **Contact.** ai@isimplifyme.com — corrections, or evidence against any specific claim in this paper, are welcome.
 
 **Cite this paper.** Elstner, J. (2026). *The Finite Chain: Bounding Multi-Agent Autonomy by Construction.* iSimplifyMe Whitepaper. https://isimplifyme.com/whitepapers/the-finite-chain
+
+## 9. Evidence
+
+Added 2026-11-07. The terminal agent in this paper's chain, the one that triggers nothing, is the pattern iSimplifyMe runs in production, and two public accounts document it.
+
+- **Investigate-only agents, in production.** [Layer 2: The Detector Sets the Precision](https://isimplifyme.com/whitepapers/layer-2-investigate-only-agents) is the production account of agents that detect and diagnose but cannot act; the [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study gives the fleet and the per-run cost.
+- **The mechanical guard is public code.** [fleetcheck](https://github.com/iSimplifyMe/fleetcheck) is the deterministic check that gates the fleet's pull requests; [The Layers Review Cannot See](https://isimplifyme.com/whitepapers/the-layers-review-cannot-see) documents why a deterministic gate, not a reviewing agent, holds the last position.
+- **The code-review gate is measured before it is trusted.** [The Trust Ladder](https://isimplifyme.com/whitepapers/the-trust-ladder) publishes the audited precision of the review agent at each rung and the thresholds it must clear to be promoted.

@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-5-business-integration](https://isimplifyme.com/whitepapers/layer-5-business-integration)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
 
 # Layer 5: Multi-Tenant Business Integration
 
@@ -127,6 +127,13 @@ This is what a mid-market or large-enterprise buyer is actually buying. They are
 Layers 1 through 4 make the AI capable, reliable, and affordable. Layer 5 makes it a business. The model layer commoditizes; the integration layer that serves many tenants without their worlds ever crossing is the part that compounds — and the part a serious firm owns.
 
 ---
+
+## Evidence
+
+Added 2026-11-07. The multi-tenant platform this paper describes is the one iSimplifyMe operates, and two public accounts describe it in production.
+
+- **One platform, many tenants.** The [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study documents the fleet as operated: 31 tenants, CI across 82 repositories, one content pipeline, investigate-only agents on Bedrock.
+- **A client's fleet in the client's own account.** The [regulated law-firm site fleet](https://isimplifyme.com/case-studies/regulated-law-firm-fleet) case study documents practice-area sites, intake and a guardrailed concierge running in the firm's own AWS account, review-gated and operated by iSimplifyMe.
 
 ## Companion Papers
 

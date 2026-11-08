@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-4-reliability-engineering](https://isimplifyme.com/whitepapers/layer-4-reliability-engineering)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-09-23 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
 
 # Layer 4: Reliability Engineering for Regulated AI
 
@@ -146,6 +146,14 @@ This is what a regulated mid-market or large-enterprise buyer's technical and co
 We apply this discipline across a client base that runs from mid-market to large enterprise, and the reliability layer is what lets the same architecture carry from a small deployment into a regulated, larger-scale engagement where "it usually works" is not an acceptable answer. The model layer is commoditized and improving on its own. The reliability engineering that makes a deployment trustworthy is the part that compounds — and the part a serious firm owns.
 
 ---
+
+## Evidence
+
+Added 2026-11-07. The controls this paper describes are running, and three of them are documented with public artifacts.
+
+- **Mechanical guardrails are public code.** [fleetcheck](https://github.com/iSimplifyMe/fleetcheck) is the lint that runs on pull requests across the fleet; [The Layers Review Cannot See](https://isimplifyme.com/whitepapers/the-layers-review-cannot-see) documents the fork-residue failures it was built to catch.
+- **Investigate-only agents have a production account.** [Layer 2: The Detector Sets the Precision](https://isimplifyme.com/whitepapers/layer-2-investigate-only-agents) and the [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study document agents that detect and diagnose across a 31-tenant fleet and are built so they cannot act.
+- **Reproducibility is measured, not assumed.** [The Same Weights, Two Machines](https://isimplifyme.com/whitepapers/the-same-weights-two-machines) reports the byte-reproducibility ceiling under full control, pre-registered, with raw runs in [determinism-harness](https://github.com/iSimplifyMe/determinism-harness).
 
 ## Companion Papers
 

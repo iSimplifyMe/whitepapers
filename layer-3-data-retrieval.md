@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-3-data-retrieval](https://isimplifyme.com/whitepapers/layer-3-data-retrieval)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-06 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-06 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
 
 # Layer 3: Data + Retrieval
 
@@ -382,6 +382,14 @@ If you are evaluating an AI firm, the following five questions surface Layer 3 d
 A firm that scores cleanly on all five is at Layer 3 depth. A firm that scores on Layer 2 only is the wrapper risk this paper exists to make visible.
 
 ---
+
+## Evidence
+
+Added 2026-11-07. Layer 3 argues that the retrieval and evaluation layer decides whether a deployed system is reliable. The evaluation discipline it calls for is published, with the instruments.
+
+- **The judge is measured before the win rate.** [The Blind Panel](https://isimplifyme.com/whitepapers/the-blind-panel) reports position bias and inter-judge agreement as preconditions for any quality score, with the panel code and records in [blind-panel](https://github.com/iSimplifyMe/blind-panel).
+- **Validation is counted, not asserted.** [The Same Object, Different Bytes](https://isimplifyme.com/whitepapers/the-same-object-different-bytes) re-scores 33,444 structured outputs through a deterministic validator and reports what it catches and what it cannot; the validator ships in [determinism-harness](https://github.com/iSimplifyMe/determinism-harness).
+- **Permissioned retrieval runs in production.** The [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study documents investigate-only agents that read telemetry across a 31-tenant fleet and write nothing, with the per-run cost stated.
 
 ## Companion Papers
 
