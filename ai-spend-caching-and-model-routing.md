@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/ai-spend-caching-and-model-routing](https://isimplifyme.com/whitepapers/ai-spend-caching-and-model-routing)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
 
 # Keeping AI Spend Flat While Token Usage Grows: Caching and Model Routing on AWS Bedrock
 
@@ -154,6 +154,14 @@ The reason the cost layer is worth building well in regulated work is that it is
 We apply this discipline across a client base that runs from mid-market to large enterprise — many production AI applications on shared multi-tenant infrastructure, including large enterprise engagements where governance is the buyer's first concern: every model interaction auditable, sensitive data confined to a controlled boundary, no system held hostage to a single vendor's roadmap. For that buyer, the cost discipline arrives as a byproduct of the same architecture. The same per-call record set that attributes cost is the audit surface that proves the system is under control. That convergence is the point: in regulated work, the cheapest defensible architecture and the most defensible cheap architecture are the same building.
 
 ---
+
+## Evidence
+
+> **Update — 2026-11-07.** The two levers in this paper, caching and routing, have measured companions and a production cost figure.
+
+- **A production run has a price.** The [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study states the per-run cost of its Bedrock investigations: $0.0822 for a Diagnostics run with DNS and HTTP probes and a Cloudflare 5xx breakdown.
+- **Caching behaviour was measured under control.** [The Same State, The Same Bytes](https://isimplifyme.com/whitepapers/the-same-state-the-same-bytes) shows prompt-cache state selecting the output on identical requests, with the lever manipulated under gates and every run public in [determinism-harness](https://github.com/iSimplifyMe/determinism-harness).
+- **The serving path is measured.** [The Same Model, Three Doors](https://isimplifyme.com/whitepapers/the-same-model-three-doors) and [The Same Model, Five Doors](https://isimplifyme.com/whitepapers/the-same-model-five-doors) report what changes when the same model is reached through different vendors' stacks.
 
 ## Companion Papers
 

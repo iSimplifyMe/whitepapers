@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/the-finite-chain](https://isimplifyme.com/whitepapers/the-finite-chain)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-25 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-07-25 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
 
 # The Finite Chain: Bounding Multi-Agent Autonomy by Construction
 
@@ -177,6 +177,14 @@ Three implementation notes that transfer independently of the rest:
 - **Give agents separate identities.** Separate credentials, working copies, and state files per agent mean one agent's failure or compromise is contained, and its actions are attributable in the git history without inference.
 
 The claim of this paper is narrow and, I think, defensible: the safety properties that matter most in a multi-agent system are structural, they are decided before any agent runs, and they are cheap. A system that cannot loop does not need to be watched for looping. Most of the engineering effort spent on multi-agent guardrails is spent detecting conditions that a different topology would have made impossible.
+
+## 9. Evidence
+
+> **Update — 2026-11-07.** The terminal agent in this paper's chain, the one that triggers nothing, is the pattern iSimplifyMe runs in production, and two public accounts document it.
+
+- **Investigate-only agents, in production.** [Layer 2: The Detector Sets the Precision](https://isimplifyme.com/whitepapers/layer-2-investigate-only-agents) is the production account of agents that detect and diagnose but cannot act; the [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study gives the fleet and the per-run cost.
+- **The mechanical guard is public code.** [fleetcheck](https://github.com/iSimplifyMe/fleetcheck) is the deterministic check that gates the fleet's pull requests; [The Layers Review Cannot See](https://isimplifyme.com/whitepapers/the-layers-review-cannot-see) documents why a deterministic gate, not a reviewing agent, holds the last position.
+- **The code-review gate is measured before it is trusted.** [The Trust Ladder](https://isimplifyme.com/whitepapers/the-trust-ladder) publishes the review agent's audited precision at the rung it holds and the bar for every rung above it.
 
 ---
 
