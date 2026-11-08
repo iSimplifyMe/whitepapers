@@ -56,9 +56,9 @@ Direct foundation-model invocation (without an inference profile) is rejected by
 
 ### 2.3 SageMaker for vision and custom models
 
-Foundation models on Bedrock are excellent at language tasks. They are mediocre at clinical pixels. For X-ray segmentation, intra-oral photo analysis, and any task where a fine-tuned domain-specific model outperforms a general one, we deploy SageMaker Serverless endpoints. SageMaker Serverless billing is per-millisecond-of-inference, which fits the bursty traffic profile of clinical imaging — a busy practice runs hundreds of inferences during morning hangouts and close to zero overnight.
+Foundation models on Bedrock are excellent at language tasks. They are mediocre at clinical pixels. For X-ray segmentation, intra-oral photo analysis, and any task where a fine-tuned domain-specific model outperforms a general one, we deploy SageMaker Serverless endpoints. SageMaker Serverless billing is per-millisecond-of-inference, which fits the bursty traffic profile of clinical imaging — a busy practice runs hundreds of inferences during morning hours and close to zero overnight.
 
-The dental platform we built runs three SageMaker endpoints: tooth detection, smile inpainting, and tooth segmentation. The detection model is a YOLOv8m architecture across 32 dental classes at 0.695 mAP50 in the current release, with a retraining pipeline designed to ingest labeled images from each practice's own S3 bucket on a quarterly cadence and produce practice-specific fine-tuned variants for opt-in workflows.
+Three SageMaker endpoints serve the dental platform we built: tooth detection, smile inpainting, and tooth segmentation. The detection model is a YOLOv8m architecture across 32 dental classes at 0.695 mAP50 in the current release, with a retraining pipeline designed to ingest labeled images from each practice's own S3 bucket on a quarterly cadence and produce practice-specific fine-tuned variants for opt-in workflows.
 
 ### 2.4 Lambda for tool dispatch
 
