@@ -1,10 +1,12 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock](https://isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-05 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-05 · Revised 2026-11-08 · License: [CC BY 4.0](LICENSE)
 
 # Private LLM Architecture for Mid-Market Healthcare on AWS Bedrock
 
 > **Update — 2026-11-07.** This revision corrects the compliance and cost passages after a reader's technical review. The data-retention section now describes Bedrock's retention modes as AWS documents them; the BAA section states the per-account and organization-wide paths and iSimplifyMe's own business-associate role; the SOC 2 and HITRUST sections state what we do and do not hold; the California residency claim is withdrawn; the price table gives way to a tiering statement and a link to current rates; model assignments now match Section 4; and three operating figures that had no published source are removed. The architecture is unchanged.
+
+> **Update — 2026-11-08.** Section 4 now describes the dental platform as built: NexV is in alpha and not in clinical use, so the section's production-tense claims are restated as capabilities of the system we built, and the Evidence section says the same.
 
 A reference architecture for deploying production AI inside HIPAA-regulated workflows, drawn from our work building healthcare AI infrastructure on AWS Bedrock and SageMaker.
 
@@ -14,7 +16,7 @@ A reference architecture for deploying production AI inside HIPAA-regulated work
 
 > **Answer:** A private LLM architecture for mid-market healthcare runs every model inference inside the practice's own AWS account through Bedrock or SageMaker, with no data leaving the VPC, no traffic to public AI APIs, and no PHI ever entering a third-party training corpus. Bedrock provides foundation-model inference under the AWS Business Associate Addendum, with a data-retention mode that can be pinned to zero where the model permits it, and IAM-scoped access. SageMaker handles vision workloads (X-ray segmentation, intra-oral photo analysis) where custom models outperform foundation models on clinical pixels. The pattern works because every component — inference, storage, audit logging, identity — is an AWS service that already operates under HIPAA-eligible terms, removing the BAA-stitching problem that breaks public-API deployments.
 
-This paper describes the architecture we deploy for healthcare workloads, the engineering tradeoffs that shape model selection and isolation, and the implementation roadmap from kickoff to production. Section 4 grounds the abstract pattern in a production deployment pattern — including imaging pipelines, OSCC (oral squamous cell carcinoma) screening, SOAP note generation, voice dictation, and AI-driven phone agents running on Bedrock Opus 4.6, Sonnet 4.6, and SageMaker Serverless endpoints. Section 7 is a 12-week deployment template engineering teams can lift directly into a planning doc.
+This paper describes the architecture we deploy for healthcare workloads, the engineering tradeoffs that shape model selection and isolation, and the implementation roadmap from kickoff to production. Section 4 grounds the abstract pattern in the dental platform we built on it — including imaging pipelines, OSCC (oral squamous cell carcinoma) screening, SOAP note generation, voice dictation, and AI-driven phone agents running on Bedrock Opus 4.6, Sonnet 4.6, and SageMaker Serverless endpoints. Section 7 is a 12-week deployment template engineering teams can lift directly into a planning doc.
 
 The intended reader is technical: CTO, VP Engineering, CIO, CISO, Director of Clinical Informatics, or the architect tasked with putting AI into a regulated workflow without earning a compliance finding.
 
@@ -56,7 +58,7 @@ Direct foundation-model invocation (without an inference profile) is rejected by
 
 Foundation models on Bedrock are excellent at language tasks. They are mediocre at clinical pixels. For X-ray segmentation, intra-oral photo analysis, and any task where a fine-tuned domain-specific model outperforms a general one, we deploy SageMaker Serverless endpoints. SageMaker Serverless billing is per-millisecond-of-inference, which fits the bursty traffic profile of clinical imaging — a busy practice runs hundreds of inferences during morning hangouts and close to zero overnight.
 
-A typical dental deployment runs three production SageMaker endpoints: tooth detection, smile inpainting, and tooth segmentation. The detection model is a YOLOv8m architecture across 32 dental classes at 0.695 mAP50 in the current release, retrained quarterly on consented practice data. The retraining pipeline ingests labeled images from each practice's own S3 bucket and produces practice-specific fine-tuned variants for opt-in workflows.
+The dental platform we built runs three SageMaker endpoints: tooth detection, smile inpainting, and tooth segmentation. The detection model is a YOLOv8m architecture across 32 dental classes at 0.695 mAP50 in the current release, with a retraining pipeline designed to ingest labeled images from each practice's own S3 bucket on a quarterly cadence and produce practice-specific fine-tuned variants for opt-in workflows.
 
 ### 2.4 Lambda for tool dispatch
 
@@ -88,13 +90,13 @@ Our typical assignments in dental and small-practice healthcare deployments: Opu
 
 ---
 
-## 4. Production deployment pattern
+## 4. The dental platform, as built
 
-> **Answer:** A production private-LLM deployment in dental and small-practice healthcare runs on AppSync GraphQL for the API surface, Cognito with separate staff and patient user pools, a single DynamoDB table per practice for tenant-scoped state, three SageMaker Serverless endpoints for the imaging pipeline, and Bedrock Opus 4.6 plus Sonnet 4.6 routed by workload. The pattern integrates an OSCC (oral squamous cell carcinoma) screening workflow, FDI tooth notation throughout the clinical chart, and the full ADA item code set at the billing layer. Imaging models follow a YOLOv8m architecture across the dental class range (about 32 classes), deployed to SageMaker Serverless and retrained quarterly on consented data.
+> **Answer:** The dental platform we built on this architecture — NexV, in alpha and not yet in clinical use — runs on AppSync GraphQL for the API surface, Cognito with separate staff and patient user pools, a single DynamoDB table per practice for tenant-scoped state, three SageMaker Serverless endpoints for the imaging pipeline, and Bedrock Opus 4.6 plus Sonnet 4.6 routed by workload. The pattern integrates an OSCC (oral squamous cell carcinoma) screening workflow, FDI tooth notation throughout the clinical chart, and the full ADA item code set at the billing layer. Imaging models follow a YOLOv8m architecture across the dental class range (about 32 classes), deployed to SageMaker Serverless, with quarterly retraining on consented data designed in.
 
 ### 4.1 Imaging pipeline
 
-The imaging pipeline ingests bitewing, panoramic, and intra-oral photos from chairside capture devices. A SageMaker Serverless endpoint runs tooth detection (YOLOv8m, 32 classes, 0.695 mAP50 in the current release). A second endpoint runs tooth segmentation for treatment planning overlays. A third endpoint runs smile inpainting for cosmetic simulation. Every inference is logged with the model version, input hash, and output payload. Consented imaging aggregates across practices for retraining; non-consented data is held in each practice's own S3 bucket with no cross-practice training.
+The imaging pipeline ingests bitewing, panoramic, and intra-oral photos from chairside capture devices. A SageMaker Serverless endpoint runs tooth detection (YOLOv8m, 32 classes, 0.695 mAP50 in the current release). A second endpoint runs tooth segmentation for treatment planning overlays. A third endpoint runs smile inpainting for cosmetic simulation. Every inference is logged with the model version, input hash, and output payload. Consented imaging is designed to aggregate across practices for retraining; non-consented data stays in each practice's own S3 bucket with no cross-practice training.
 
 ### 4.2 OSCC screening workflow
 
@@ -116,7 +118,7 @@ The AI phone agent is built on Amazon Connect for telephony, Lex V2 for intent a
 
 The platform ships with the full set of ADA item codes (363 codes, 13th Edition) and full FDI notation. The chart UI uses FDI by default. The billing UI uses ADA. The translation between them is a deterministic lookup, not a model call — clinical accuracy at the billing layer is non-negotiable, and a probabilistic translation would generate audit findings.
 
-The deployment this section describes runs in the Australian market, where that item-code schedule and FDI notation are the norm and the Privacy Act, not HIPAA, governs patient data. The HIPAA controls in Section 5 are the US configuration of the same architecture.
+The platform this section describes was built for the Australian market, where that item-code schedule and FDI notation are the norm and the Privacy Act, not HIPAA, governs patient data. The HIPAA controls in Section 5 are the US configuration of the same architecture.
 
 ---
 
@@ -221,12 +223,12 @@ Self-hosted LLMs on EC2 work, but the operational cost is meaningful — GPU ins
 > **Update — 2026-11-07.** This paper is a reference architecture, so the checkable material is the running system it describes rather than a dataset. Three things can be verified without talking to us.
 
 - **The model inventory is published.** [/ai-transparency](https://isimplifyme.com/ai-transparency) names every foundation model in production, the platform each runs on, and the zero-retention posture on every model that handles client data, with the three exceptions named.
-- **The architecture runs a clinical product.** [NexV](https://isimplifyme.com/labs/nexv), an Australian-market dental practice platform, runs every model call through Bedrock or SageMaker inside the practice's AWS account: imaging models on SageMaker, SOAP-note structuring on Bedrock, and an AI phone agent on Amazon Connect, as the dossier documents.
+- **The architecture has a built clinical product.** [NexV](https://isimplifyme.com/labs/nexv), the dental practice platform we built for the Australian market (in alpha, not yet in clinical use), is built to run every model call through Bedrock or SageMaker inside the practice's AWS account: imaging models on SageMaker, SOAP-note structuring on Bedrock, and an AI phone agent on Amazon Connect, as the dossier documents.
 - **The isolation claims have a measured companion.** [The Same Model, Three Doors](https://isimplifyme.com/whitepapers/the-same-model-three-doors) measured the same model through Bedrock and the first-party API under a pre-registered plan, with raw records in the public [determinism-harness](https://github.com/iSimplifyMe/determinism-harness).
 
 ## Conclusion
 
-Private LLM architecture for healthcare is an engineering pattern for a real set of regulatory, residency, and audit-trail requirements a public API leaves to the vendor's terms. The pattern has six layers, runs on AWS services that operate under the AWS Business Associate Addendum, and ships in 12 weeks for a focused first deployment. We have the pattern in production: an imaging pipeline retrained on consented data, OSCC screening integrated into clinical flow, ADA codes and full FDI notation in the chart, three SageMaker endpoints, two Bedrock model tiers routed by workload, and a clean audit trail end-to-end.
+Private LLM architecture for healthcare is an engineering pattern for a real set of regulatory, residency, and audit-trail requirements a public API leaves to the vendor's terms. The pattern has six layers, runs on AWS services that operate under the AWS Business Associate Addendum, and ships in 12 weeks for a focused first deployment. We have built the pattern end to end: an imaging pipeline with consented retraining designed in, OSCC screening integrated into the clinical flow, ADA codes and full FDI notation in the chart, three SageMaker endpoints, two Bedrock model tiers routed by workload, and a clean audit trail end-to-end.
 
 If your practice or platform is evaluating AI for regulated clinical workflows, the architecture in this paper is the floor. The choices above the floor — model selection, retraining cadence, attestation roadmap, integration pacing — are practice-specific. We design those choices in partnership with the engineering team that will operate the system on day 91.
 
