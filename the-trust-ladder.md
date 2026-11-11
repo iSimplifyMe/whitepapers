@@ -196,6 +196,6 @@ Supervised autonomy arrives when agents write nearly all of the code and a human
 
 **About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific. iSimplifyMe is bootstrapped, deploys production AI on AWS Bedrock, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
 
-**Contact.** ai@isimplifyme.com — for engineering teams standing up trust systems around their own AI gates.
+**Contact.** ai@isimplifyme.com — questions from engineering teams standing up trust systems around their own AI gates are welcome.
 
 **Cite this paper.** Elstner, J. (2026). *The Trust Ladder: Supervised Autonomy for AI Code Review.* iSimplifyMe Whitepaper. https://isimplifyme.com/whitepapers/the-trust-ladder

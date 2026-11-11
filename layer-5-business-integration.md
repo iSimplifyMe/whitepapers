@@ -169,6 +169,6 @@ Productizing AI is mostly an integration problem, not a modeling one. Layer 5 is
 
 **About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific. iSimplifyMe is bootstrapped, deploys production AI on AWS, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
 
-**Contact.** ai@isimplifyme.com — for engineering teams building a multi-tenant AI product.
+**Contact.** ai@isimplifyme.com — questions from engineering teams building a multi-tenant AI product are welcome.
 
 **Cite this paper.** Elstner, J. (2026). *Layer 5: Multi-Tenant Business Integration.* iSimplifyMe Whitepaper. https://isimplifyme.com/whitepapers/layer-5-business-integration

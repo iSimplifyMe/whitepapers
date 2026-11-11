@@ -189,6 +189,6 @@ The distance between an AI demo and a production AI system is reliability engine
 
 **About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific. iSimplifyMe is bootstrapped, deploys production AI on AWS Bedrock, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
 
-**Contact.** ai@isimplifyme.com — for engineering teams taking a regulated AI workload from demo to production.
+**Contact.** ai@isimplifyme.com — questions from engineering teams taking a regulated AI workload from demo to production are welcome.
 
 **Cite this paper.** Elstner, J. (2026). *Layer 4: Reliability Engineering for Regulated AI.* iSimplifyMe Whitepaper. https://isimplifyme.com/whitepapers/layer-4-reliability-engineering

@@ -138,7 +138,7 @@ Amazon Bedrock controls retention of prompts and outputs through a data-retentio
 
 ### 5.3 Audit log lifecycle
 
-CloudWatch Logs holds Bedrock and SageMaker invocations for 30 days. A Logs subscription filter ships entries to S3 with a 7-year retention lifecycle managed by S3 Lifecycle policies. The 7-year window matches the minimum several states set for adult patient records (Texas requires at least seven years from the last treatment). It is not an upper bound: Texas keeps a minor's record until age 21, and Massachusetts lets a hospital or clinic destroy a record only 20 years after discharge, so each deployment sets the lifecycle to the rule that governs it. Audit records are encrypted with a per-account KMS key.
+CloudWatch Logs holds Bedrock and SageMaker invocations for 30 days. A Logs subscription filter ships entries to S3 with a 7-year retention lifecycle managed by S3 Lifecycle policies. The 7-year window matches the minimum several states set for adult patient records (Texas requires at least seven years from the last treatment). It is not an upper bound: Texas keeps a minor's record until at least age 21, and Massachusetts lets a hospital or clinic destroy a record only 20 years after discharge or final treatment, so each deployment sets the lifecycle to the rule that governs it. Audit records are encrypted with a per-account KMS key.
 
 ### 5.4 IAM least-privilege
 
@@ -250,6 +250,6 @@ If your practice or platform is evaluating AI for regulated clinical workflows, 
 
 **About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific (Melbourne). iSimplifyMe is bootstrapped, accepts the AWS Business Associate Addendum on every account that handles PHI, and states its compliance posture without claiming certifications it does not hold.
 
-**Contact.** ai@isimplifyme.com — for engineering teams evaluating private LLM architecture.
+**Contact.** ai@isimplifyme.com — questions from engineering teams evaluating private LLM architecture are welcome.
 
 **Cite this paper.** Elstner, J. (2026). *Private LLM Architecture for Mid-Market Healthcare on AWS Bedrock.* iSimplifyMe Whitepaper. https://isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock

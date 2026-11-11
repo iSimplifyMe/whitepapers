@@ -96,7 +96,7 @@
     "mirroredAt": "2026-11-11"
   },
   "the-trust-ladder": {
-    "sha256": "762d5490104ccbeb758b2b4a9a216a7e4bb2f803724b5584278a784cdd645c19",
+    "sha256": "f45c3f50677529dcdfaabe8e47c71b64217a526bbf7850d4fa8b6e654cbfeb39",
     "datePublished": "2026-07-23",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
@@ -107,31 +107,31 @@
     "mirroredAt": "2026-11-11"
   },
   "ai-spend-caching-and-model-routing": {
-    "sha256": "8d045fd4a2780726e49efbc14943fe18f63267b6fd3c0c53b379ea0167ea1b45",
+    "sha256": "58b94813683e3507e7e2aadb5f2bec685833fdccf38f370fe4fe90250c64dbf5",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "private-llm-healthcare-aws-bedrock": {
-    "sha256": "920f6c4e9a4caaa4aa492d0d710393e8df3cbfc84ada60ea72b19f6e6bf31d9a",
+    "sha256": "189ed98136e0cd39903f2bd62324ddf44f3b18bb49e9777ef7aabf21d016b01a",
     "datePublished": "2026-05-05",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "layer-3-data-retrieval": {
-    "sha256": "d3041944ee1f1dd9cce806ecafd0e8a903ee4241ca889cc1fbdce169e12194d0",
+    "sha256": "c495ecbc0153ca3f2d3336c7d836237bdadee9018524a900b6254d2efbc6f999",
     "datePublished": "2026-05-06",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "layer-4-reliability-engineering": {
-    "sha256": "8f8739feeb5dcff537a63ef9e5f65f36833da635dfef67e5c5f0eebfbf014094",
+    "sha256": "f21c75eee5bbc52292fc376a25148c571905566ca2be5b5c70e4b5cab655f74f",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "layer-5-business-integration": {
-    "sha256": "b7639852329c7092a2c867ed2842781938c0592f8913f4535f565a8013a53f30",
+    "sha256": "2a56a1f5b91a37e205c138cb7e56424f5286d659910d8935774f36aedc2c513c",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
