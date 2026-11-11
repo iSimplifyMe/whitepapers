@@ -4,7 +4,7 @@
 
 # Layer 5: Multi-Tenant Business Integration
 
-> **Update — 2026-11-11.** Section 2 called the partition-key design "isolation by construction." That claimed too much: a partition key separates one tenant's data from another's and authorizes nothing. The section now says what the key design does (it removes the forgotten-filter failure), where authorization happens (one resolved tenant per request), and which two AWS tools can enforce the boundary below the application: an IAM condition on the partition key, and a separate AWS account. The architecture is unchanged.
+> **Update — 2026-11-11.** Section 2 called the partition-key design "isolation by construction." That claimed too much: a partition key separates one tenant's data from another's and authorizes nothing. The section now says what the key design does (it removes the forgotten-filter failure), where authorization happens (one resolved tenant per request), and which two AWS tools can enforce the boundary below the application: an IAM condition on the partition key, and a separate AWS account. Section 4 and the note on dual-write said that a regulated tenant's stored lead is stripped of name, email, and phone. The platform does the reverse, and only for a medical tenant: it keeps the contact identity and drops the free text. Both passages now say so. The architecture is unchanged.
 
 A reference architecture for the business-integration layer of an LLM-native platform on AWS — single-table multi-tenancy, domain-routed tenant resolution, a unified lead pipeline, role-permissioned client dashboards, and synchronized billing — the layer that turns AI capability into a product many clients run on one platform.
 
@@ -62,7 +62,7 @@ This is what lets one platform — one codebase, one deployment — answer for a
 
 ## 4. The Unified Lead Pipeline
 
-> **Answer:** At network scale, the right place to capture conversions is once, centrally — not per site. A first-touch attribution pixel stamps the traffic source on every visitor; each client site's thin form proxy forwards submissions to a single ingest endpoint that resolves the tenant, parses attribution, enriches with AI-crawler signal, scores the lead, writes it atomically with a daily rollup, enforces a per-tenant rate cap, and strips PII for regulated tenants — all in one call. Notification mail sends from one managed sender with each tenant's own recipients and branding.
+> **Answer:** At network scale, the right place to capture conversions is once, centrally — not per site. A first-touch attribution pixel stamps the traffic source on every visitor; each client site's thin form proxy forwards submissions to a single ingest endpoint that resolves the tenant, parses attribution, enriches with AI-crawler signal, scores the lead, writes it atomically with a daily rollup, enforces a per-tenant rate cap, and drops free-text fields from a medical tenant's stored record — all in one call. Notification mail sends from one managed sender with each tenant's own recipients and branding.
 
 Doing lead capture per-site does not survive a fleet. Every site would need its own verified email domain, its own DKIM and SPF, its own storage, and its own notification logic — multiplied by every client, maintained forever. The architecture that scales centralizes the pipeline and keeps only the thinnest possible client at the edge.
 
@@ -70,7 +70,7 @@ Doing lead capture per-site does not survive a fleet. Every site would need its 
 
 **Thin proxy, one endpoint.** Each client site runs a thin form proxy: it validates input, runs spam checks, reads the attribution cookie, and forwards the submission to a single authenticated ingest endpoint. That one endpoint serves every client site — and the AI concierge widget — through the same path.
 
-**One call does the work.** On receipt, the endpoint resolves the tenant, parses the attribution, enriches the lead with AI-crawler signal (whether an answer engine recently crawled the converting page — a Layer 5 read on a Layer 3 signal), scores it against the tenant's optional fit rules, and performs an atomic write: the lead record and a daily rollup counter together, so the feed and the analytics can never disagree. A per-tenant daily rate cap bounds abuse, and for a regulated (medical) tenant the stored record is PII-stripped — name, email, and phone nulled — before it is written.
+**One call does the work.** On receipt, the endpoint resolves the tenant, parses the attribution, enriches the lead with AI-crawler signal (whether an answer engine recently crawled the converting page — a Layer 5 read on a Layer 3 signal), scores it against the tenant's optional fit rules, and performs an atomic write: the lead record and a daily rollup counter together, so the feed and the analytics can never disagree. A per-tenant daily rate cap bounds abuse, and for a medical tenant the stored record keeps the contact identity (name, email, phone) and drops the free text that can carry health details — the custom fields and the concierge transcript — before it is written.
 
 **Centralized sender, per-tenant identity.** Notification mail goes out from one platform-managed sender, but each tenant configures its own recipients, from-name, and subject line — so the client receives branded, correctly-routed notifications without standing up any email infrastructure of its own. (This is centralized sending with per-tenant configuration, not a separate mail identity per client — the operational simplicity is the point.) For the regulated tenant whose stored record was stripped, the notification still carries the contact details to the practice, so capture stays compliant while follow-up stays possible.
 
@@ -114,7 +114,7 @@ The fastest way to lose a mid-market or enterprise client is to ask them to aban
 
 **The boundary.** The platform owns the AI, the capture, and the cross-network intelligence; the client keeps their CRM as the system of record. This is integration, not replacement — the client's existing investments keep working, and the AI layer makes them better rather than demanding they be torn out.
 
-**Regulated dual-write.** For a regulated tenant that opts in, a parallel record can carry full detail to the client's own controlled system, while the platform's own store stays PII-stripped. The client's compliance boundary is respected on both sides: the platform holds only what it should, and the client's system of record holds what the client is entitled to hold.
+**Medical dual-write.** For a medical tenant, the notification mail and the mirror to the client's own CRM carry the full submission, while the platform's own store drops the free text. The client's compliance boundary is respected on both sides: the platform holds only what it should, and the client's system of record holds what the client is entitled to hold.
 
 ---
 
