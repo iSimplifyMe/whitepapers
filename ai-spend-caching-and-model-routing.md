@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/ai-spend-caching-and-model-routing](https://isimplifyme.com/whitepapers/ai-spend-caching-and-model-routing)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-11 · License: [CC BY 4.0](LICENSE)
 
 # Keeping AI Spend Flat While Token Usage Grows: Caching and Model Routing on AWS Bedrock
 
@@ -197,6 +197,6 @@ AI spend is not a usage problem to be rationed; it is an architecture decision t
 
 **About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific. iSimplifyMe is bootstrapped, deploys production AI on AWS Bedrock, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
 
-**Contact.** ai@isimplifyme.com — for engineering teams whose AI spend is growing faster than they can explain, we offer a cost-architecture review at no cost.
+**Contact.** ai@isimplifyme.com — for engineering teams whose AI spend is growing faster than they can explain.
 
 **Cite this paper.** Elstner, J. (2026). *Keeping AI Spend Flat While Token Usage Grows: Caching and Model Routing on AWS Bedrock.* iSimplifyMe Whitepaper. https://isimplifyme.com/whitepapers/ai-spend-caching-and-model-routing

@@ -96,9 +96,9 @@
     "mirroredAt": "2026-11-11"
   },
   "the-trust-ladder": {
-    "sha256": "82c804ba6707256536874a571636967c7bb027ba794593d8917835ab1c087ef1",
+    "sha256": "762d5490104ccbeb758b2b4a9a216a7e4bb2f803724b5584278a784cdd645c19",
     "datePublished": "2026-07-23",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "the-aeo-standard": {
@@ -107,33 +107,33 @@
     "mirroredAt": "2026-11-11"
   },
   "ai-spend-caching-and-model-routing": {
-    "sha256": "5390d0379ac5d06c89ebb516b7cdef9eb8e94ebe6a1e34de867f86b505a3b486",
+    "sha256": "8d045fd4a2780726e49efbc14943fe18f63267b6fd3c0c53b379ea0167ea1b45",
     "datePublished": "2026-06-28",
-    "dateModified": "2026-11-07",
+    "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "private-llm-healthcare-aws-bedrock": {
-    "sha256": "866c4a6b51dfe329fd29e7f5935dbbe18b966d8dbe1f0d42ab96790c062e5151",
+    "sha256": "d10f364057523c56f8bdc353487444c9401ec1191308a628c775586ebffd010c",
     "datePublished": "2026-05-05",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "layer-3-data-retrieval": {
-    "sha256": "4dd200551690a19ae1642dd2e5bc3090211135be30e119fd7b3094acb7c1c71a",
+    "sha256": "d3041944ee1f1dd9cce806ecafd0e8a903ee4241ca889cc1fbdce169e12194d0",
     "datePublished": "2026-05-06",
-    "dateModified": "2026-11-07",
+    "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "layer-4-reliability-engineering": {
-    "sha256": "2d45ab3ba8fce1f7e8fc7ab15315a39b274657ceea569c37228940bc517128b9",
+    "sha256": "8f8739feeb5dcff537a63ef9e5f65f36833da635dfef67e5c5f0eebfbf014094",
     "datePublished": "2026-06-28",
-    "dateModified": "2026-11-07",
+    "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "layer-5-business-integration": {
-    "sha256": "71a3e7cee11e0b3c472154a47d2045a336ef13bdfcc5dc5dd2ded7e34ad2376a",
+    "sha256": "b7639852329c7092a2c867ed2842781938c0592f8913f4535f565a8013a53f30",
     "datePublished": "2026-06-28",
-    "dateModified": "2026-11-07",
+    "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   }
 }

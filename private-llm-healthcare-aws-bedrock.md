@@ -250,6 +250,6 @@ If your practice or platform is evaluating AI for regulated clinical workflows, 
 
 **About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific (Melbourne). iSimplifyMe is bootstrapped, accepts the AWS Business Associate Addendum on every account that handles PHI, and states its compliance posture without claiming certifications it does not hold.
 
-**Contact.** ai@isimplifyme.com — for engineering teams evaluating private LLM architecture, we offer an architecture review session at no cost.
+**Contact.** ai@isimplifyme.com — for engineering teams evaluating private LLM architecture.
 
 **Cite this paper.** Elstner, J. (2026). *Private LLM Architecture for Mid-Market Healthcare on AWS Bedrock.* iSimplifyMe Whitepaper. https://isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock

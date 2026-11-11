@@ -1,6 +1,6 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-3-data-retrieval](https://isimplifyme.com/whitepapers/layer-3-data-retrieval)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-06 · Revised 2026-11-07 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-06 · Revised 2026-11-11 · License: [CC BY 4.0](LICENSE)
 
 # Layer 3: Data + Retrieval
 
@@ -428,6 +428,6 @@ This paper documents the iSimplifyMe Layer 3 reference pattern. The companion pa
 
 **About the author.** Joseph W. Elstner is the founder and principal architect of iSimplifyMe, a Chicago-headquartered AI infrastructure firm operating since 2011 across North America and Asia-Pacific (Melbourne). iSimplifyMe is bootstrapped, deploys production AI on AWS Bedrock, and runs a multi-tenant orchestration platform across healthcare, legal, financial, and editorial verticals.
 
-**Contact.** ai@isimplifyme.com — for engineering teams evaluating Layer 3 architecture, we offer a retrieval architecture review session at no cost.
+**Contact.** ai@isimplifyme.com — for engineering teams evaluating Layer 3 architecture.
 
 **Cite this paper.** Elstner, J. (2026). *Layer 3: Data + Retrieval.* iSimplifyMe Whitepaper. https://isimplifyme.com/whitepapers/layer-3-data-retrieval
