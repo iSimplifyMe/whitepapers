@@ -3,137 +3,137 @@
     "sha256": "9647349712dabe2d5bcc05efba92477b255bf90f677d6ae4c86713bca3babe0b",
     "datePublished": "2026-11-07",
     "dateModified": "2026-11-07",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "layer-2-investigate-only-agents": {
     "sha256": "8a7b0b596973af3572572106b8e62afd4a4befbe37596a0a710a14cbebe8aa92",
     "datePublished": "2026-10-19",
     "dateModified": "2026-10-19",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "layer-1-model-selection-and-routing": {
     "sha256": "9f0e02e9b27dd5a824a9858c43681c89e511a9427ba7e9ffd28085dbeb8effc9",
     "datePublished": "2026-10-02",
     "dateModified": "2026-10-03",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-rulebook-is-not-the-guardrail": {
     "sha256": "68121e9bdedc6016d3b2d42c2011e6813ede969ff9b754398bb28b390db9b9cd",
     "datePublished": "2026-09-15",
     "dateModified": "2026-09-15",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-routing-table": {
     "sha256": "636cd0a434a8a246979c8da75c8eaa9404078b8b95c9abc4d7c64109de916193",
     "datePublished": "2026-08-31",
     "dateModified": "2026-08-31",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-same-model-five-doors": {
     "sha256": "945d71f314732dd5d9991fbcd8036e1cb3684a03f0a002982df7028f05f68409",
     "datePublished": "2026-08-23",
     "dateModified": "2026-08-23",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-tokenizer-is-a-fingerprint": {
     "sha256": "0ff6686a42e9f7a3edb95ab9974fc8b44b49580d1e79a8009ad3fe33588de00c",
     "datePublished": "2026-08-22",
     "dateModified": "2026-08-31",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-ceiling-is-not-the-model": {
     "sha256": "c9356fa8d1be1bec2b4739838c99f23e88fc2d5b27bd084c92df7ff268abdbc9",
     "datePublished": "2026-08-11",
     "dateModified": "2026-08-11",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-layers-review-cannot-see": {
     "sha256": "5a936f5edd420c8d0231209ec33a55bd93f67f0d722c414fd7a46072b5741b0b",
     "datePublished": "2026-08-05",
     "dateModified": "2026-08-05",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-same-state-the-same-bytes": {
     "sha256": "59eba994da949d313fc238324a301664bf421d48dba7ca52c3d4805258e3ea87",
     "datePublished": "2026-07-31",
     "dateModified": "2026-07-31",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-same-object-different-bytes": {
     "sha256": "fa5e4a42acbaf8c3bb27abae03e470efe187cb1b25cb366255eb918b4626e41d",
     "datePublished": "2026-07-30",
     "dateModified": "2026-07-30",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-same-weights-two-machines": {
     "sha256": "d89ae696d9d7598cef959fd07b62d75d80ceed42d709300d6278faab1b7b72a8",
     "datePublished": "2026-07-30",
     "dateModified": "2026-07-30",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-same-model-three-doors": {
     "sha256": "e82c0b85aee27970ab9d2469a01ca94231dec8e0e7534877b3f926898228cc0c",
     "datePublished": "2026-07-29",
     "dateModified": "2026-07-29",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-same-request-twice": {
     "sha256": "88ba02c96baecf32507adf0febc5d1d4d58c4fe62d39ea68d0779608c0d51a27",
     "datePublished": "2026-07-28",
     "dateModified": "2026-07-28",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-blind-panel": {
     "sha256": "d3e9efc351afa57ca8296bec3d33969f23be9e41f79a5be6adc35fc40d638c98",
     "datePublished": "2026-07-26",
     "dateModified": "2026-07-26",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-finite-chain": {
     "sha256": "6ecd5f803998ade7a8d32495eb945d2f39a5fd86e578812fb333da44b7bdb883",
     "datePublished": "2026-07-25",
     "dateModified": "2026-11-07",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-trust-ladder": {
     "sha256": "82c804ba6707256536874a571636967c7bb027ba794593d8917835ab1c087ef1",
     "datePublished": "2026-07-23",
     "dateModified": "2026-09-15",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "the-aeo-standard": {
     "sha256": "38fc9bc99b68bc63aa84752f336e07e1c18cb910b599b42589d279cdea7af0b6",
     "datePublished": "2026-07-10",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "ai-spend-caching-and-model-routing": {
     "sha256": "5390d0379ac5d06c89ebb516b7cdef9eb8e94ebe6a1e34de867f86b505a3b486",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-07",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "private-llm-healthcare-aws-bedrock": {
-    "sha256": "0baf626aada5052986051eb708569cfe754ac719dd458ef47b54c555a02cbad8",
+    "sha256": "866c4a6b51dfe329fd29e7f5935dbbe18b966d8dbe1f0d42ab96790c062e5151",
     "datePublished": "2026-05-05",
-    "dateModified": "2026-11-08",
-    "mirroredAt": "2026-11-08"
+    "dateModified": "2026-11-11",
+    "mirroredAt": "2026-11-11"
   },
   "layer-3-data-retrieval": {
     "sha256": "4dd200551690a19ae1642dd2e5bc3090211135be30e119fd7b3094acb7c1c71a",
     "datePublished": "2026-05-06",
     "dateModified": "2026-11-07",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "layer-4-reliability-engineering": {
     "sha256": "2d45ab3ba8fce1f7e8fc7ab15315a39b274657ceea569c37228940bc517128b9",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-07",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   },
   "layer-5-business-integration": {
     "sha256": "71a3e7cee11e0b3c472154a47d2045a336ef13bdfcc5dc5dd2ded7e34ad2376a",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-07",
-    "mirroredAt": "2026-11-08"
+    "mirroredAt": "2026-11-11"
   }
 }

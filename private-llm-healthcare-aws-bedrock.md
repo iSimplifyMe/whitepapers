@@ -1,12 +1,14 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock](https://isimplifyme.com/whitepapers/private-llm-healthcare-aws-bedrock)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-05 · Revised 2026-11-08 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-05-05 · Revised 2026-11-11 · License: [CC BY 4.0](LICENSE)
 
 # Private LLM Architecture for Mid-Market Healthcare on AWS Bedrock
 
 > **Update — 2026-11-07.** This revision corrects the compliance and cost passages after a reader's technical review. The data-retention section now describes Bedrock's retention modes as AWS documents them; the BAA section states the per-account and organization-wide paths and iSimplifyMe's own business-associate role; the SOC 2 and HITRUST sections state what we do and do not hold; the California residency claim is withdrawn; the price table gives way to a tiering statement and a link to current rates; model assignments now match Section 4; and three operating figures that had no published source are removed. The architecture is unchanged.
 
 > **Update — 2026-11-08.** Section 4 now describes the dental platform as built: NexV is in alpha and not yet in clinical use, so its production-tense claims are restated as capabilities of the system we built, with matching changes in the Abstract, Section 2.3, the Evidence section, and the Conclusion; Section 4's model versions now match the build (Opus 5, Sonnet 5.5).
+
+> **Update — 2026-11-11.** Two short answers in this page's FAQ markup, on the scope of the AWS BAA and on the X-ray latency budget, still carried the wording from before the 2026-11-07 correction. They now match the answers in the paper's own FAQ below. The text of the paper is unchanged.
 
 A reference architecture for deploying production AI inside HIPAA-regulated workflows, drawn from our work building healthcare AI infrastructure on AWS Bedrock and SageMaker.
 
