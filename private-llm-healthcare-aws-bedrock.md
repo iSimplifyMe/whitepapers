@@ -8,7 +8,7 @@
 
 > **Update — 2026-11-08.** Section 4 now describes the dental platform as built: NexV is in alpha and not yet in clinical use, so its production-tense claims are restated as capabilities of the system we built, with matching changes in the Abstract, Section 2.3, the Evidence section, and the Conclusion; Section 4's model versions now match the build (Opus 5, Sonnet 5.5).
 
-> **Update — 2026-11-11.** Two short answers in this page's FAQ markup, on the scope of the AWS BAA and on the X-ray latency budget, still carried the wording from before the 2026-11-07 correction. They now match the answers in the paper's own FAQ below. The text of the paper is unchanged.
+> **Update — 2026-11-11.** Two short answers in this page's FAQ markup, on the scope of the AWS BAA and on the X-ray latency budget, still carried the wording from before the 2026-11-07 correction. They now match the answers in the paper's own FAQ below. Later the same day two statements were corrected after a further review. Section 5.3 had called seven years the upper bound of state record-retention rules; it is the minimum several states set for adult records, and some rules run longer. The comparison with Epic and Google in the FAQ no longer credits this pattern with multi-cloud optionality, which a deployment on Bedrock does not provide. The contact line no longer offers a review at no cost.
 
 A reference architecture for deploying production AI inside HIPAA-regulated workflows, drawn from our work building healthcare AI infrastructure on AWS Bedrock and SageMaker.
 
@@ -138,7 +138,7 @@ Amazon Bedrock controls retention of prompts and outputs through a data-retentio
 
 ### 5.3 Audit log lifecycle
 
-CloudWatch Logs holds Bedrock and SageMaker invocations for 30 days. A Logs subscription filter ships entries to S3 with a 7-year retention lifecycle managed by S3 Lifecycle policies. The 7-year window matches the upper bound of state record-retention requirements (Texas, California, and several others). Audit records are encrypted with a per-account KMS key.
+CloudWatch Logs holds Bedrock and SageMaker invocations for 30 days. A Logs subscription filter ships entries to S3 with a 7-year retention lifecycle managed by S3 Lifecycle policies. The 7-year window matches the minimum several states set for adult patient records (Texas requires at least seven years from the last treatment). It is not an upper bound: Texas keeps a minor's record until age 21, and Massachusetts lets a hospital or clinic destroy a record only 20 years after discharge, so each deployment sets the lifecycle to the rule that governs it. Audit records are encrypted with a per-account KMS key.
 
 ### 5.4 IAM least-privilege
 
@@ -203,7 +203,7 @@ Three. First, the AWS BAA covers AWS-listed HIPAA-eligible services only — it 
 <details>
 <summary>How does this compare to Epic's Microsoft AI partnership or Google's Healthcare API?</summary>
 
-Epic's Microsoft AI integration is a closed-stack deployment — the practice gets AI features through Epic's product surface, with Epic and Microsoft holding the architectural control. Google Healthcare API is a different shape: a managed FHIR store and inference layer that the customer accesses through Google Cloud, with Google's BAA covering the listed services. Both are valid choices for practices already standardized on those vendors. The private-LLM-on-Bedrock pattern is the right choice when the practice wants architectural control, multi-cloud optionality, and a model-agnostic deployment that can route to whichever foundation model produces the best result on a given workload.
+Epic's Microsoft AI integration is a closed-stack deployment — the practice gets AI features through Epic's product surface, with Epic and Microsoft holding the architectural control. Google Healthcare API is a different shape: a managed FHIR store and inference layer that the customer accesses through Google Cloud, with Google's BAA covering the listed services. Both are valid choices for practices already standardized on those vendors. The private-LLM-on-Bedrock pattern is the right choice when the practice wants architectural control and a model-agnostic deployment that can route to whichever foundation model produces the best result on a given workload.
 </details>
 
 <details>
