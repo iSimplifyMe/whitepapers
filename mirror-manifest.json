@@ -6,15 +6,15 @@
     "mirroredAt": "2026-11-11"
   },
   "layer-2-investigate-only-agents": {
-    "sha256": "8a7b0b596973af3572572106b8e62afd4a4befbe37596a0a710a14cbebe8aa92",
+    "sha256": "3120343aa391c3db8756395debcff36569514ad7b1a7cc54d06c3a373105217f",
     "datePublished": "2026-10-19",
-    "dateModified": "2026-10-19",
+    "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "layer-1-model-selection-and-routing": {
-    "sha256": "9f0e02e9b27dd5a824a9858c43681c89e511a9427ba7e9ffd28085dbeb8effc9",
+    "sha256": "b589d0dbc0a06e2384851702681160c53b7cc372c7bad9be29fe6ea9e5881b45",
     "datePublished": "2026-10-02",
-    "dateModified": "2026-10-03",
+    "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
   },
   "the-rulebook-is-not-the-guardrail": {
@@ -113,7 +113,7 @@
     "mirroredAt": "2026-11-11"
   },
   "private-llm-healthcare-aws-bedrock": {
-    "sha256": "189ed98136e0cd39903f2bd62324ddf44f3b18bb49e9777ef7aabf21d016b01a",
+    "sha256": "0a5456ce8d5f86847cbc4fab66a676dde1a7fb0288a7f6314b73d7b77c894c09",
     "datePublished": "2026-05-05",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
@@ -131,7 +131,7 @@
     "mirroredAt": "2026-11-11"
   },
   "layer-5-business-integration": {
-    "sha256": "2a56a1f5b91a37e205c138cb7e56424f5286d659910d8935774f36aedc2c513c",
+    "sha256": "a4fcf55c38d41a352fe41dc56839b5e00a4974d3adc29e499d7d7fba6900f112",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-11",
     "mirroredAt": "2026-11-11"
