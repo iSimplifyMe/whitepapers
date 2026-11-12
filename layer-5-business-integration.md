@@ -1,8 +1,10 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-5-business-integration](https://isimplifyme.com/whitepapers/layer-5-business-integration)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-11 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-12 · License: [CC BY 4.0](LICENSE)
 
 # Layer 5: Multi-Tenant Business Integration
+
+> **Update — 2026-11-12.** Section 2 called the partition-key design "isolation by construction." That claimed too much: a partition key separates one tenant's data from another's and authorizes nothing. The section now says what the key design does (it removes the forgotten-filter failure), where authorization happens (one resolved tenant per request), and which two AWS tools can enforce the boundary below the application: an IAM condition on the partition key, and a separate AWS account. Section 4 and the note on dual-write said that a regulated tenant's stored lead is stripped of name, email, and phone. The platform does the reverse, and only for a medical tenant: it keeps the contact identity and drops the free text. Both passages now say so. The architecture is unchanged.
 
 A reference architecture for the business-integration layer of an LLM-native platform on AWS — single-table multi-tenancy, domain-routed tenant resolution, a unified lead pipeline, role-permissioned client dashboards, and synchronized billing — the layer that turns AI capability into a product many clients run on one platform.
 
@@ -10,7 +12,7 @@ A reference architecture for the business-integration layer of an LLM-native pla
 
 ## Abstract
 
-> **Answer:** Layer 5 is the business-integration layer of an LLM-native systems architecture — the layer that turns AI capability into a running, multi-tenant product. It is single-table multi-tenancy with isolation by construction, domain-routed tenant resolution, a unified pipeline that captures and attributes every lead across a fleet of client sites, role-permissioned dashboards where each client sees only its own data, subscription billing wired in as infrastructure, and integration with the tools clients already run. The model layer is commoditized; the integration layer that makes one platform serve many businesses — each isolated, billed, and reporting on its own terms — is where the architecture meets the org chart.
+> **Answer:** Layer 5 is the business-integration layer of an LLM-native systems architecture — the layer that turns AI capability into a running, multi-tenant product. It is single-table multi-tenancy with the tenant in every key, domain-routed tenant resolution, a unified pipeline that captures and attributes every lead across a fleet of client sites, role-permissioned dashboards where each client sees only its own data, subscription billing wired in as infrastructure, and integration with the tools clients already run. The model layer is commoditized; the integration layer that makes one platform serve many businesses — each isolated, billed, and reporting on its own terms — is where the architecture meets the org chart.
 
 This is a reference-architecture paper in the same series as *Layer 3: Data + Retrieval*, the companion paper on caching and model routing, and *Layer 4: Reliability Engineering*. It documents the top of the stack — the layer where a working AI capability becomes a product that clients pay for and operate.
 
@@ -30,15 +32,17 @@ That is an organizational problem as much as a technical one. A single tenant's 
 
 ## 2. One Network, Many Tenants
 
-> **Answer:** Multi-tenancy done right is isolation by construction, not by convention. A single data store keys every record by tenant — the partition key *is* the tenant identity — so a query for tenant A cannot return tenant B's rows by the shape of the key, not by a filter that a bug could skip. Every request resolves to exactly one tenant through a cascading auth chain (OAuth token, API key, signed session), and the resolved tenant scopes every read and write. The infrastructure is shared; the data plane is not.
+> **Answer:** Multi-tenancy done right puts the tenant in the key, not in a filter. A single data store keys every record by tenant — the partition key *is* the tenant identity — so a query for tenant A cannot return tenant B's rows by the shape of the key, not by a filter that a bug could skip. That removes the accidental cross-tenant read. It is not by itself an authorization boundary: authorization is the step before it, where every request resolves to exactly one tenant through a cascading auth chain (OAuth token, API key, signed session), and the resolved tenant scopes every read and write. The infrastructure is shared; the data is partitioned by tenant.
 
 The cheapest multi-tenancy filters by tenant at the application layer — every record sits in a shared space, and a `WHERE tenant = X` clause keeps them apart. The problem is that a clause is a thing a bug can omit, and the day it does, one client sees another's data. Isolation that depends on remembering to filter is not isolation.
 
-**Tenant in the partition key.** The architecture keys every record on the tenant identity itself: a tenant's profile, its users, and its captured leads all live under one partition key derived from the tenant. A query for tenant A literally addresses tenant A's partition; it cannot return tenant B's rows, because it never reaches B's partition. Isolation is a property of the key, not of a clause. This is the multi-tenant data-isolation pattern the [AWS Well-Architected SaaS Lens](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html) treats as foundational, applied on a single table.
+**Tenant in the partition key.** The architecture keys every record on the tenant identity itself: a tenant's profile, its users, and its captured leads all live under one partition key derived from the tenant. A query for tenant A literally addresses tenant A's partition; it cannot return tenant B's rows, because it never reaches B's partition. The separation is a property of the key, not of a clause. This is the multi-tenant data-isolation pattern the [AWS Well-Architected SaaS Lens](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html) treats as foundational, applied on a single table.
 
-**One resolved tenant per request.** Moreover, every inbound request resolves to exactly one tenant through an ordered auth chain — an OAuth access token, an API key, a signed session token, or an authenticated session cookie — with an explicit admin override for cross-tenant support. Whatever the entry point, the request arrives carrying one tenant identity, and that identity is the scope for everything downstream.
+**What the key does not do.** A key organizes data; it does not authorize access. Code that holds table-wide permissions can still address another tenant's partition if it is handed the wrong tenant, so the key design removes the forgotten-filter failure and nothing more. Where a workload needs the boundary enforced below the application, AWS offers two tools: an IAM condition on the partition key ([`dynamodb:LeadingKeys`](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html)), which scopes a credential to one tenant's items, and a separate AWS account, the boundary [a regulated client's dedicated infrastructure runs in](https://isimplifyme.com/trust).
 
-**Shared infrastructure, isolated data plane.** One platform, one table, one deployment — and a hundred isolated tenants on top of it. The shared substrate is what makes the economics work; the per-tenant keying is what makes it safe. Both at once is the point.
+**One resolved tenant per request.** Every inbound request resolves to exactly one tenant through an ordered auth chain — an OAuth access token, an API key, a signed session token, or an authenticated session cookie — with an explicit admin override for cross-tenant support. Whatever the entry point, the request arrives carrying one tenant identity, and that identity is the scope for everything downstream.
+
+**Shared infrastructure, partitioned data.** One platform, one table, one deployment — and many tenants on top of it, each in its own partition. The shared substrate is what makes the economics work; the per-tenant keying and the one resolved tenant per request are what keep the tenants apart. Both at once is the point.
 
 ---
 
@@ -58,7 +62,7 @@ This is what lets one platform — one codebase, one deployment — answer for a
 
 ## 4. The Unified Lead Pipeline
 
-> **Answer:** At network scale, the right place to capture conversions is once, centrally — not per site. A first-touch attribution pixel stamps the traffic source on every visitor; each client site's thin form proxy forwards submissions to a single ingest endpoint that resolves the tenant, parses attribution, enriches with AI-crawler signal, scores the lead, writes it atomically with a daily rollup, enforces a per-tenant rate cap, and strips PII for regulated tenants — all in one call. Notification mail sends from one managed sender with each tenant's own recipients and branding.
+> **Answer:** At network scale, the right place to capture conversions is once, centrally — not per site. A first-touch attribution pixel stamps the traffic source on every visitor; each client site's thin form proxy forwards submissions to a single ingest endpoint that resolves the tenant, parses attribution, enriches with AI-crawler signal, scores the lead, writes it atomically with a daily rollup, enforces a per-tenant rate cap, and drops free-text fields from a medical tenant's stored record — all in one call. Notification mail sends from one managed sender with each tenant's own recipients and branding.
 
 Doing lead capture per-site does not survive a fleet. Every site would need its own verified email domain, its own DKIM and SPF, its own storage, and its own notification logic — multiplied by every client, maintained forever. The architecture that scales centralizes the pipeline and keeps only the thinnest possible client at the edge.
 
@@ -66,9 +70,9 @@ Doing lead capture per-site does not survive a fleet. Every site would need its 
 
 **Thin proxy, one endpoint.** Each client site runs a thin form proxy: it validates input, runs spam checks, reads the attribution cookie, and forwards the submission to a single authenticated ingest endpoint. That one endpoint serves every client site — and the AI concierge widget — through the same path.
 
-**One call does the work.** On receipt, the endpoint resolves the tenant, parses the attribution, enriches the lead with AI-crawler signal (whether an answer engine recently crawled the converting page — a Layer 5 read on a Layer 3 signal), scores it against the tenant's optional fit rules, and performs an atomic write: the lead record and a daily rollup counter together, so the feed and the analytics can never disagree. A per-tenant daily rate cap bounds abuse, and for a regulated (medical) tenant the stored record is PII-stripped — name, email, and phone nulled — before it is written.
+**One call does the work.** On receipt, the endpoint resolves the tenant, parses the attribution, enriches the lead with AI-crawler signal (whether an answer engine recently crawled the converting page — a Layer 5 read on a Layer 3 signal), scores it against the tenant's optional fit rules, and performs an atomic write: the lead record and a daily rollup counter together, so the feed and the analytics can never disagree. A per-tenant daily rate cap bounds abuse, and for a medical tenant the stored record keeps the contact identity (name, email, phone) and drops the free text that can carry health details — the custom fields and the concierge transcript — before it is written.
 
-**Centralized sender, per-tenant identity.** Notification mail goes out from one platform-managed sender, but each tenant configures its own recipients, from-name, and subject line — so the client receives branded, correctly-routed notifications without standing up any email infrastructure of its own. (This is centralized sending with per-tenant configuration, not a separate mail identity per client — the operational simplicity is the point.) For the regulated tenant whose stored record was stripped, the notification still carries the contact details to the practice, so capture stays compliant while follow-up stays possible.
+**Centralized sender, per-tenant identity.** Notification mail goes out from one platform-managed sender, but each tenant configures its own recipients, from-name, and subject line — so the client receives branded, correctly-routed notifications without standing up any email infrastructure of its own. (This is centralized sending with per-tenant configuration, not a separate mail identity per client — the operational simplicity is the point.) For a medical tenant, the notification still carries the full submission to the practice, so the practice reads what the visitor wrote while the platform's store does not keep the free text.
 
 ---
 
@@ -76,11 +80,11 @@ Doing lead capture per-site does not survive a fleet. Every site would need its 
 
 > **Answer:** In a multi-tenant product, every client touches the same application but sees only their own world. A role matrix maps each role — owner, member, billing, admin — to the set of modules it may open, enforced at render and at the API; and every query is scoped to the resolved tenant's partition, so a client cannot see another's data even by guessing a URL. The dashboard is one application; the view is per-tenant and per-role.
 
-A multi-tenant dashboard has two isolation jobs at once: keep tenants apart, and keep roles within a tenant apart. Both run on the same principle as the data layer — enforcement by construction, not by hiding a button.
+A multi-tenant dashboard has two isolation jobs at once: keep tenants apart, and keep roles within a tenant apart. Both run on the same principle as the data layer — enforcement where the request is served, not a hidden button.
 
 **Role-to-module matrix.** Each role maps to a defined set of modules it may open. An owner sees the operational and billing modules; a member sees the operational modules but not billing or internal support; a billing-only role sees billing, account, and the home view and nothing else; an admin sees everything. The mapping is checked both when the navigation renders and at the API, so a hidden module is also an unreachable one — removing the link is never the only thing standing between a role and a capability.
 
-**Tenant isolation in every query.** Every dashboard query is keyed to the resolved tenant's partition — the same key-shape isolation as the data layer. A client's leads, analytics, content, and tickets are addressable only under its own tenant key, so no cross-tenant data reaches the UI or the API, even if a URL is guessed or an ID is forged. The client sees its own world because its own world is the only world its requests can address.
+**Tenant isolation in every query.** Every dashboard query is keyed to the resolved tenant's partition — the same key-shape separation as the data layer. A client's leads, analytics, content, and tickets are addressable only under its own tenant key, so no cross-tenant data reaches the UI or the API, even if a URL is guessed or an ID is forged. The client sees its own world because its own world is the only world its requests can address.
 
 **Admin support without breaking the model.** Even so, an administrator can switch tenant context to support any client, scoped by an explicit override — so support is possible without weakening the isolation that every client relies on. The override is the seam where one team can see across tenants; for clients themselves, there is no such seam.
 
@@ -110,7 +114,7 @@ The fastest way to lose a mid-market or enterprise client is to ask them to aban
 
 **The boundary.** The platform owns the AI, the capture, and the cross-network intelligence; the client keeps their CRM as the system of record. This is integration, not replacement — the client's existing investments keep working, and the AI layer makes them better rather than demanding they be torn out.
 
-**Regulated dual-write.** For a regulated tenant that opts in, a parallel record can carry full detail to the client's own controlled system, while the platform's own store stays PII-stripped. The client's compliance boundary is respected on both sides: the platform holds only what it should, and the client's system of record holds what the client is entitled to hold.
+**Medical dual-write.** For a medical tenant, the notification mail and the mirror to the client's own CRM carry the full submission, while the platform's own store drops the free text. The client's compliance boundary is respected on both sides: the platform holds only what it should, and the client's system of record holds what the client is entitled to hold.
 
 ---
 
@@ -120,7 +124,7 @@ The fastest way to lose a mid-market or enterprise client is to ask them to aban
 
 Every layer below this one makes the AI good. Layer 5 makes it a business — and the two are not the same achievement.
 
-Indeed, the convergence is that per-tenant keying is both the isolation boundary and the cost boundary at once. The same partition key that keeps client A's data away from client B is what lets one shared platform serve them both — multi-tenant economics and multi-tenant safety from the same design. Domain routing, the unified pipeline, role-scoped dashboards, reconciled billing, and CRM integration are the machinery that lets one small team operate a fleet of client deployments without the per-client overhead multiplying out of control.
+Indeed, the convergence is that per-tenant keying draws both the data partition and the cost boundary at once. The same partition key that keeps client A's data away from client B is what lets one shared platform serve them both — multi-tenant economics and multi-tenant safety from the same design. Domain routing, the unified pipeline, role-scoped dashboards, reconciled billing, and CRM integration are the machinery that lets one small team operate a fleet of client deployments without the per-client overhead multiplying out of control.
 
 This is what a mid-market or large-enterprise buyer is actually buying. They are not buying a model — they assume the model is good. They are buying a system that runs their AI as a product: isolated from every other client, billed correctly, reporting on its own terms, and wired into the tools they already use. We apply this discipline across a client base that runs from mid-market to large enterprise, and the integration layer is what lets one platform carry all of them at once.
 
@@ -133,7 +137,7 @@ Layers 1 through 4 make the AI capable, reliable, and affordable. Layer 5 makes 
 > **Update — 2026-11-07.** The multi-tenant platform this paper describes is the one iSimplifyMe operates, and two public accounts describe it in production.
 
 - **One platform, many tenants.** The [AWS-native AI ops layer](https://isimplifyme.com/case-studies/sentinel-ai-ops-layer) case study documents the fleet as operated: 31 tenants, CI across 82 repositories, one content pipeline, investigate-only agents on Bedrock.
-- **A client's fleet in the client's own account.** The [regulated law-firm site fleet](https://isimplifyme.com/case-studies/regulated-law-firm-fleet) case study documents practice-area sites, intake and a guardrailed concierge running in the firm's own AWS account, review-gated and operated by iSimplifyMe.
+- **A client's fleet in the client's own account.** The [regulated law-firm site fleet](https://isimplifyme.com/case-studies/regulated-law-firm-fleet) case study documents practice-area sites running in the firm's own AWS account, review-gated and operated by iSimplifyMe; the fleet's intake and guardrailed concierge run on iSimplifyMe's platform.
 
 ## Companion Papers
 
@@ -151,7 +155,7 @@ Each paper stands alone; together they map the full stack of an LLM-native syste
 
 ## Conclusion
 
-Productizing AI is mostly an integration problem, not a modeling one. Layer 5 is the layer that solves it: single-table multi-tenancy where isolation is a property of the key rather than a clause a bug can skip; domain-routed resolution that lands every request in exactly its own tenant; a unified pipeline that captures, attributes, scores, and routes every lead across the fleet in one call; role-permissioned dashboards where each client sees only its own world; billing kept current as synchronized infrastructure; and per-tenant integration that feeds the client's own system of record rather than replacing it. The layers below make the AI good; this one makes it a product clients pay for and operate.
+Productizing AI is mostly an integration problem, not a modeling one. Layer 5 is the layer that solves it: single-table multi-tenancy where the tenant is part of every key rather than a clause a bug can skip; domain-routed resolution that lands every request in exactly its own tenant; a unified pipeline that captures, attributes, scores, and routes every lead across the fleet in one call; role-permissioned dashboards where each client sees only its own world; billing kept current as synchronized infrastructure; and per-tenant integration that feeds the client's own system of record rather than replacing it. The layers below make the AI good; this one makes it a product clients pay for and operate.
 
 ---
 

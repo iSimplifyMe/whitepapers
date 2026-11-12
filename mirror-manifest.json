@@ -3,137 +3,137 @@
     "sha256": "9647349712dabe2d5bcc05efba92477b255bf90f677d6ae4c86713bca3babe0b",
     "datePublished": "2026-11-07",
     "dateModified": "2026-11-07",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "layer-2-investigate-only-agents": {
-    "sha256": "8a7b0b596973af3572572106b8e62afd4a4befbe37596a0a710a14cbebe8aa92",
+    "sha256": "173d098453edb4a6b2007c8133b9eaeec7f8d55222a3a4659dacefea5ec4fe36",
     "datePublished": "2026-10-19",
-    "dateModified": "2026-10-19",
-    "mirroredAt": "2026-11-11"
+    "dateModified": "2026-11-12",
+    "mirroredAt": "2026-11-12"
   },
   "layer-1-model-selection-and-routing": {
-    "sha256": "9f0e02e9b27dd5a824a9858c43681c89e511a9427ba7e9ffd28085dbeb8effc9",
+    "sha256": "7051a00d82c72139f31c695f28c3262062b69b83785b1d54121fc08a2ede177d",
     "datePublished": "2026-10-02",
-    "dateModified": "2026-10-03",
-    "mirroredAt": "2026-11-11"
+    "dateModified": "2026-11-12",
+    "mirroredAt": "2026-11-12"
   },
   "the-rulebook-is-not-the-guardrail": {
     "sha256": "68121e9bdedc6016d3b2d42c2011e6813ede969ff9b754398bb28b390db9b9cd",
     "datePublished": "2026-09-15",
     "dateModified": "2026-09-15",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-routing-table": {
     "sha256": "636cd0a434a8a246979c8da75c8eaa9404078b8b95c9abc4d7c64109de916193",
     "datePublished": "2026-08-31",
     "dateModified": "2026-08-31",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-same-model-five-doors": {
     "sha256": "945d71f314732dd5d9991fbcd8036e1cb3684a03f0a002982df7028f05f68409",
     "datePublished": "2026-08-23",
     "dateModified": "2026-08-23",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-tokenizer-is-a-fingerprint": {
     "sha256": "0ff6686a42e9f7a3edb95ab9974fc8b44b49580d1e79a8009ad3fe33588de00c",
     "datePublished": "2026-08-22",
     "dateModified": "2026-08-31",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-ceiling-is-not-the-model": {
     "sha256": "c9356fa8d1be1bec2b4739838c99f23e88fc2d5b27bd084c92df7ff268abdbc9",
     "datePublished": "2026-08-11",
     "dateModified": "2026-08-11",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-layers-review-cannot-see": {
     "sha256": "5a936f5edd420c8d0231209ec33a55bd93f67f0d722c414fd7a46072b5741b0b",
     "datePublished": "2026-08-05",
     "dateModified": "2026-08-05",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-same-state-the-same-bytes": {
     "sha256": "59eba994da949d313fc238324a301664bf421d48dba7ca52c3d4805258e3ea87",
     "datePublished": "2026-07-31",
     "dateModified": "2026-07-31",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-same-object-different-bytes": {
     "sha256": "fa5e4a42acbaf8c3bb27abae03e470efe187cb1b25cb366255eb918b4626e41d",
     "datePublished": "2026-07-30",
     "dateModified": "2026-07-30",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-same-weights-two-machines": {
     "sha256": "d89ae696d9d7598cef959fd07b62d75d80ceed42d709300d6278faab1b7b72a8",
     "datePublished": "2026-07-30",
     "dateModified": "2026-07-30",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-same-model-three-doors": {
     "sha256": "e82c0b85aee27970ab9d2469a01ca94231dec8e0e7534877b3f926898228cc0c",
     "datePublished": "2026-07-29",
     "dateModified": "2026-07-29",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-same-request-twice": {
     "sha256": "88ba02c96baecf32507adf0febc5d1d4d58c4fe62d39ea68d0779608c0d51a27",
     "datePublished": "2026-07-28",
     "dateModified": "2026-07-28",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-blind-panel": {
     "sha256": "d3e9efc351afa57ca8296bec3d33969f23be9e41f79a5be6adc35fc40d638c98",
     "datePublished": "2026-07-26",
     "dateModified": "2026-07-26",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-finite-chain": {
     "sha256": "6ecd5f803998ade7a8d32495eb945d2f39a5fd86e578812fb333da44b7bdb883",
     "datePublished": "2026-07-25",
     "dateModified": "2026-11-07",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-trust-ladder": {
     "sha256": "f45c3f50677529dcdfaabe8e47c71b64217a526bbf7850d4fa8b6e654cbfeb39",
     "datePublished": "2026-07-23",
     "dateModified": "2026-11-11",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "the-aeo-standard": {
     "sha256": "38fc9bc99b68bc63aa84752f336e07e1c18cb910b599b42589d279cdea7af0b6",
     "datePublished": "2026-07-10",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "ai-spend-caching-and-model-routing": {
     "sha256": "58b94813683e3507e7e2aadb5f2bec685833fdccf38f370fe4fe90250c64dbf5",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-11",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "private-llm-healthcare-aws-bedrock": {
-    "sha256": "189ed98136e0cd39903f2bd62324ddf44f3b18bb49e9777ef7aabf21d016b01a",
+    "sha256": "8c5f615fc63b5b3e1591817f52ed09d605c6a67c44f555a354d35897b5f1a210",
     "datePublished": "2026-05-05",
-    "dateModified": "2026-11-11",
-    "mirroredAt": "2026-11-11"
+    "dateModified": "2026-11-12",
+    "mirroredAt": "2026-11-12"
   },
   "layer-3-data-retrieval": {
     "sha256": "c495ecbc0153ca3f2d3336c7d836237bdadee9018524a900b6254d2efbc6f999",
     "datePublished": "2026-05-06",
     "dateModified": "2026-11-11",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "layer-4-reliability-engineering": {
     "sha256": "f21c75eee5bbc52292fc376a25148c571905566ca2be5b5c70e4b5cab655f74f",
     "datePublished": "2026-06-28",
     "dateModified": "2026-11-11",
-    "mirroredAt": "2026-11-11"
+    "mirroredAt": "2026-11-12"
   },
   "layer-5-business-integration": {
-    "sha256": "2a56a1f5b91a37e205c138cb7e56424f5286d659910d8935774f36aedc2c513c",
+    "sha256": "88771e9fbd4b0a142992af6824b337e4f66ad1207943443007296c5a3225cb76",
     "datePublished": "2026-06-28",
-    "dateModified": "2026-11-11",
-    "mirroredAt": "2026-11-11"
+    "dateModified": "2026-11-12",
+    "mirroredAt": "2026-11-12"
   }
 }
