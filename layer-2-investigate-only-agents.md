@@ -1,10 +1,10 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-2-investigate-only-agents](https://isimplifyme.com/whitepapers/layer-2-investigate-only-agents)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-10-19 · Revised 2026-11-11 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-10-19 · Revised 2026-11-12 · License: [CC BY 4.0](LICENSE)
 
 # Layer 2: The Detector Sets the Precision
 
-> **Update — 2026-11-11.** Sections 4 and 10 describe the runner's queue as the logs showed it through 19 October 2026: no dead-letter policy, a visibility window equal to the runner's own timeout, and a thrown session failing its whole batch. All three gaps were closed the day after publication. Since 20 October 2026 the queue has a 30-minute visibility window (six times the runner's timeout), a dead-letter queue after three receives with an alarm on it, and per-message failure reporting, so a failed job is retried alone, for at most three attempts in all. In each section, the paragraph on redelivery now ends with a sentence saying so. Nothing else in the paper changed.
+> **Update — 2026-11-12.** Sections 4 and 10 describe the runner's queue as the logs showed it through 19 October 2026: no dead-letter policy, a visibility window equal to the runner's own timeout, and a thrown session failing its whole batch. All three gaps were closed the day after publication. Since 20 October 2026 the queue has a 30-minute visibility window (six times the runner's timeout), a dead-letter queue after three receives with an alarm on it, and per-message failure reporting, so a failed job is retried alone, for at most three attempts in all. In each section, the paragraph on redelivery now ends with a sentence saying so. Nothing else in the paper changed.
 
 Investigate-only agents — the Sentinel pattern in detail: a typed agent registry, an SQS-driven generic runner, atomic conditional-write locks for race protection, cost ceilings at the agent level, and what five months of the production record say about where the human gate belongs.
 

@@ -1,10 +1,10 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-5-business-integration](https://isimplifyme.com/whitepapers/layer-5-business-integration)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-11 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-06-28 · Revised 2026-11-12 · License: [CC BY 4.0](LICENSE)
 
 # Layer 5: Multi-Tenant Business Integration
 
-> **Update — 2026-11-11.** Section 2 called the partition-key design "isolation by construction." That claimed too much: a partition key separates one tenant's data from another's and authorizes nothing. The section now says what the key design does (it removes the forgotten-filter failure), where authorization happens (one resolved tenant per request), and which two AWS tools can enforce the boundary below the application: an IAM condition on the partition key, and a separate AWS account. Section 4 and the note on dual-write said that a regulated tenant's stored lead is stripped of name, email, and phone. The platform does the reverse, and only for a medical tenant: it keeps the contact identity and drops the free text. Both passages now say so. The architecture is unchanged.
+> **Update — 2026-11-12.** Section 2 called the partition-key design "isolation by construction." That claimed too much: a partition key separates one tenant's data from another's and authorizes nothing. The section now says what the key design does (it removes the forgotten-filter failure), where authorization happens (one resolved tenant per request), and which two AWS tools can enforce the boundary below the application: an IAM condition on the partition key, and a separate AWS account. Section 4 and the note on dual-write said that a regulated tenant's stored lead is stripped of name, email, and phone. The platform does the reverse, and only for a medical tenant: it keeps the contact identity and drops the free text. Both passages now say so. The architecture is unchanged.
 
 A reference architecture for the business-integration layer of an LLM-native platform on AWS — single-table multi-tenancy, domain-routed tenant resolution, a unified lead pipeline, role-permissioned client dashboards, and synchronized billing — the layer that turns AI capability into a product many clients run on one platform.
 

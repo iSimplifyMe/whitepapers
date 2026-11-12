@@ -1,10 +1,10 @@
 > **This is a mirror.** The canonical, living edition of this paper is published at
 > **[isimplifyme.com/whitepapers/layer-1-model-selection-and-routing](https://isimplifyme.com/whitepapers/layer-1-model-selection-and-routing)** — it revises there first; this mirror follows.
-> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-10-02 · Revised 2026-11-11 · License: [CC BY 4.0](LICENSE)
+> Joseph W. Elstner, Founder & Principal Architect, iSimplifyMe · Published 2026-10-02 · Revised 2026-11-12 · License: [CC BY 4.0](LICENSE)
 
 # Layer 1: The Model Is a Dependency With a Retirement Date
 
-> **Update — 2026-11-11.** Section 2 said that NexV runs three vision models on SageMaker endpoints. Those endpoints ran during the product's alpha and were removed on 2026-11-07; the sentence now says so. Nothing else in the paper changed.
+> **Update — 2026-11-12.** Section 2 said that NexV runs three vision models on SageMaker endpoints. Those endpoints ran during the product's alpha and were removed on 2026-11-07; the sentence now says so. Nothing else in the paper changed.
 
 Frontier model selection and routing — why we don't train, why we route per task, and how the architecture stays model-version-independent. A reference architecture for the model layer of LLM-native systems on AWS Bedrock, with one fleet's move between two model generations as the worked case.
 
